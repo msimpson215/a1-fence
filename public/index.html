@@ -221,6 +221,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(0,0,0,0.97);
   .hero-tagline{font-size:clamp(2.2rem,9vw,4rem);}
   .services-grid{grid-template-columns:1fr;}
 }
+
+/* FORCE DARK CONTACT FORM (overrides anything else) */
+section form{
+  background:#0f0f0f !important;
+  color:#fff !important;
+  border-color:rgba(255,255,255,0.10) !important;
+}
+section form label{ color:#fff !important; }
+section form input,
+section form select,
+section form textarea{
+  background:#111 !important;
+  color:#fff !important;
+  border-color:rgba(255,255,255,0.18) !important;
+}
+section form p{ color:rgba(255,255,255,0.55) !important; }
+
+
 </style>
 </head>
 <body>
@@ -300,6 +318,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(0,0,0,0.97);
 
    
 <!-- FULL-WIDTH LOGO BANNER (proportional height, taller) -->
+  
 <div style="
   width:100vw;
   margin-left:calc(50% - 50vw);
@@ -479,57 +498,56 @@ url('images/asphalt-road.jpg') center/cover no-repeat;
     </div>
 
     <!-- NOTE: This shows now. Hook up sending later by replacing action="javascript:void(0)" -->
-    <form action="javascript:void(0)" method="POST" style="background:#ffffff;border-radius:10px;padding:22px;border:1px solid rgba(0,0,0,0.08);box-shadow:0 20px 50px rgba(0,0,0,0.35);">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;">
-        <div style="display:flex;flex-direction:column;gap:6px;">
-          <label style="color:#111;font-weight:900;font-size:0.75rem;letter-spacing:0.10em;text-transform:uppercase;">Name</label>
-          <input name="name" type="text" required style="background:#fff;color:#111;border:1px solid rgba(0,0,0,0.18);border-radius:8px;padding:12px;font-size:1rem;outline:none;">
-        </div>
-        <div style="display:flex;flex-direction:column;gap:6px;">
-          <label style="color:#111;font-weight:900;font-size:0.75rem;letter-spacing:0.10em;text-transform:uppercase;">Phone</label>
-          <input name="phone" type="tel" required style="background:#fff;color:#111;border:1px solid rgba(0,0,0,0.18);border-radius:8px;padding:12px;font-size:1rem;outline:none;">
-        </div>
-      </div>
+    <form action="javascript:void(0)" method="POST" style="background:#0f0f0f;border-radius:10px;padding:22px;border:1px solid rgba(255,255,255,0.10);box-shadow:0 20px 50px rgba(0,0,0,0.35);">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;">
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <label style="color:#fff;font-weight:900;font-size:0.75rem;letter-spacing:0.10em;text-transform:uppercase;">Name</label>
+      <input name="name" type="text" required style="background:#111;color:#fff;border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:12px;font-size:1rem;outline:none;">
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <label style="color:#fff;font-weight:900;font-size:0.75rem;letter-spacing:0.10em;text-transform:uppercase;">Phone</label>
+      <input name="phone" type="tel" required style="background:#111;color:#fff;border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:12px;font-size:1rem;outline:none;">
+    </div>
+  </div>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;">
-        <div style="display:flex;flex-direction:column;gap:6px;">
-          <label style="color:#111;font-weight:900;font-size:0.75rem;letter-spacing:0.10em;text-transform:uppercase;">Email</label>
-          <input name="email" type="email" required style="background:#fff;color:#111;border:1px solid rgba(0,0,0,0.18);border-radius:8px;padding:12px;font-size:1rem;outline:none;">
-        </div>
-        <div style="display:flex;flex-direction:column;gap:6px;">
-          <label style="color:#111;font-weight:900;font-size:0.75rem;letter-spacing:0.10em;text-transform:uppercase;">Service</label>
-          <select name="service" required style="background:#fff;color:#111;border:1px solid rgba(0,0,0,0.18);border-radius:8px;padding:12px;font-size:1rem;outline:none;">
-            <option value="" selected disabled>Select one…</option>
-            <option>Sealcoating</option>
-            <option>Crack Filling</option>
-            <option>Asphalt Patching</option>
-            <option>Striping</option>
-            <option>Bollards</option>
-            <option>Concrete</option>
-            <option>Other</option>
-          </select>
-        </div>
-      </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;">
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <label style="color:#fff;font-weight:900;font-size:0.75rem;letter-spacing:0.10em;text-transform:uppercase;">Email</label>
+      <input name="email" type="email" required style="background:#111;color:#fff;border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:12px;font-size:1rem;outline:none;">
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <label style="color:#fff;font-weight:900;font-size:0.75rem;letter-spacing:0.10em;text-transform:uppercase;">Service</label>
+      <select name="service" required style="background:#111;color:#fff;border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:12px;font-size:1rem;outline:none;">
+        <option value="" selected disabled>Select one…</option>
+        <option>Sealcoating</option>
+        <option>Crack Filling</option>
+        <option>Asphalt Patching</option>
+        <option>Striping</option>
+        <option>Bollards</option>
+        <option>Concrete</option>
+        <option>Other</option>
+      </select>
+    </div>
+  </div>
 
-      <div style="margin-bottom:14px;display:flex;flex-direction:column;gap:6px;">
-        <label style="color:#111;font-weight:900;font-size:0.75rem;letter-spacing:0.10em;text-transform:uppercase;">Job Location</label>
-        <input name="location" type="text" placeholder="City, State" required style="background:#fff;color:#111;border:1px solid rgba(0,0,0,0.18);border-radius:8px;padding:12px;font-size:1rem;outline:none;">
-      </div>
+  <div style="margin-bottom:14px;display:flex;flex-direction:column;gap:6px;">
+    <label style="color:#fff;font-weight:900;font-size:0.75rem;letter-spacing:0.10em;text-transform:uppercase;">Job Location</label>
+    <input name="location" type="text" placeholder="City, State" required style="background:#111;color:#fff;border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:12px;font-size:1rem;outline:none;">
+  </div>
 
-      <div style="margin-bottom:14px;display:flex;flex-direction:column;gap:6px;">
-        <label style="color:#111;font-weight:900;font-size:0.75rem;letter-spacing:0.10em;text-transform:uppercase;">Details</label>
-        <textarea name="message" rows="5" required style="background:#fff;color:#111;border:1px solid rgba(0,0,0,0.18);border-radius:8px;padding:12px;font-size:1rem;outline:none;resize:vertical;"></textarea>
-      </div>
+  <div style="margin-bottom:14px;display:flex;flex-direction:column;gap:6px;">
+    <label style="color:#fff;font-weight:900;font-size:0.75rem;letter-spacing:0.10em;text-transform:uppercase;">Details</label>
+    <textarea name="message" rows="5" required style="background:#111;color:#fff;border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:12px;font-size:1rem;outline:none;resize:vertical;"></textarea>
+  </div>
 
-      <button type="submit" style="width:100%;background:var(--yellow);color:#000;border:none;border-radius:8px;padding:14px 16px;font-weight:1000;font-size:0.95rem;letter-spacing:0.10em;text-transform:uppercase;cursor:pointer;">
-        Send Request
-      </button>
+  <button type="submit" style="width:100%;background:var(--yellow);color:#000;border:none;border-radius:8px;padding:14px 16px;font-weight:1000;font-size:0.95rem;letter-spacing:0.10em;text-transform:uppercase;">
+    Send Request
+  </button>
 
-      <p style="margin-top:10px;color:rgba(0,0,0,0.55);font-size:0.8rem;line-height:1.4;text-align:center;">
-        We’ll contact you ASAP.
-      </p>
-    </form>
-
+  <p style="margin-top:10px;color:rgba(255,255,255,0.55);font-size:0.8rem;line-height:1.4;text-align:center;">
+    We’ll contact you ASAP.
+  </p>
+</form>
   </div>
 </section>
 <div style="position:relative;overflow:hidden;padding:72px 40px;text-align:center;border-top:1px solid rgba(255,255,255,0.06);">
