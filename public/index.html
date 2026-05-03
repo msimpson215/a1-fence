@@ -261,7 +261,16 @@ section form p{ color:rgba(255,255,255,0.55) !important; }
     <a href="our-work.html">Our Work</a>
     <a href="about.html">About</a>
   </div>
-  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+<button class="hamburger" onclick="toggleMenu(event)" aria-label="Menu"><span></span><span></span><span></span></button>
+
+<!-- 2) AROUND LINE ~599: replace ONLY this function -->
+<script>
+function toggleMenu(e){
+  if(e) e.stopPropagation();
+  var m=document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+}
+</script>
   <div class="nav-right">
     <a href="https://a1-asphalt-voxtalk-3.onrender.com/" target="_blank" class="btn-ai">Talk With Our A.I. Team Member</a>
     <a href="tel:6189293301" class="call">&#128222; (618) 929-3301</a>
@@ -596,7 +605,7 @@ url('images/asphalt-road.jpg') center/cover no-repeat;
   <iframe src="https://a1-asphalt-voxtalk-3.onrender.com/" title="A1 AI Team Member" allow="microphone"></iframe>
 </div>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-function toggleMenu(){var m=document.getElementById('mobileMenu');m.classList.toggle('open');}
+function toggleMenu(e){if(e)e.stopPropagation();var m=document.getElementById('mobileMenu');m.classList.toggle('open');}
 document.addEventListener('click',function(e){var m=document.getElementById('mobileMenu');if(m.classList.contains('open')&&!m.contains(e.target)&&!e.target.closest('.hamburger')){m.classList.remove('open');}});
 function openVox(){var o=document.getElementById('vox-overlay');o.classList.add('open');o.style.display='block';}
 function closeVox(){var o=document.getElementById('vox-overlay');o.style.display='none';o.classList.remove('open');}
