@@ -274,7 +274,7 @@ section form p{ color:rgba(255,255,255,0.55) !important; }
   position:relative;
   width:100%;
   background:#0d0d0d;
-  padding:22px 40px;
+  padding:12px 40px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -298,12 +298,12 @@ section form p{ color:rgba(255,255,255,0.55) !important; }
 .ib-flag-left,.ib-flag-right{
   position:absolute;
   top:0;
-  width:48%;
+  width:35%;
   height:100%;
   background-image:url('images/american-flag.png');
   background-size:cover;
   background-position:center;
-  opacity:0.13;
+  opacity:0.07;
   pointer-events:none;
 }
 .ib-flag-left{left:0;}
@@ -311,7 +311,7 @@ section form p{ color:rgba(255,255,255,0.55) !important; }
 .ib-vignette{
   position:absolute;
   inset:0;
-  background:radial-gradient(ellipse 38% 100% at 50% 50%,#0d0d0d 10%,transparent 65%);
+  background:radial-gradient(ellipse 45% 100% at 50% 50%,#0d0d0d 20%,transparent 70%);
   pointer-events:none;
 }
 .identity-band-name{
@@ -365,18 +365,141 @@ section form p{ color:rgba(255,255,255,0.55) !important; }
   justify-content:center;
   align-items:center;
   width:100%;
-  max-width:560px;
+  max-width:480px;
 }
 .identity-band-logo img{
   width:100%;
   height:auto;
-  max-height:none;
-  max-width:540px;
+  max-height:90px;
   object-fit:contain;
-  filter:drop-shadow(0 4px 20px rgba(0,0,0,0.9));
+  filter:drop-shadow(0 2px 12px rgba(0,0,0,0.8));
 }
 
 /* Hide nav logo (home button) */
 nav .logo{
   display:none;
+}
+
+/* =====================================================
+   LOGO HERO BAND — full width, flags left+right, logo centered
+   ===================================================== */
+.logo-hero-band {
+  position: relative;
+  width: 100%;
+  background: #0a0a0a;
+  margin-top: 72px;
+  padding: 32px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Flags — subliminal, faded into both sides */
+.lhb-flag-left,
+.lhb-flag-right {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url('images/american-flag.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.13;
+  pointer-events: none;
+}
+.lhb-flag-left  { left: 0; }
+.lhb-flag-right { right: 0; transform: scaleX(-1); }
+
+/* Center vignette — flags fade toward middle */
+.lhb-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 120% at 50% 50%, #0a0a0a 15%, transparent 68%);
+  pointer-events: none;
+}
+
+/* The logo — full width, stretches edge to edge with padding */
+.lhb-logo {
+  position: relative;
+  z-index: 2;
+  width: calc(100% - 80px);
+  max-width: 1400px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 24px rgba(0,0,0,0.85));
+}
+
+/* Road stripe divider */
+.road-stripe-divider {
+  width: 100%;
+  height: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    #FFDD00 0px, #FFDD00 60px,
+    transparent 60px, transparent 90px
+  );
+}
+
+/* =====================================================
+   TICKER LABEL — bigger and visible
+   ===================================================== */
+.ticker-label {
+  background: #0a0a0a;
+  text-align: center;
+  padding: 18px 20px 12px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ffffff !important;
+}
+
+/* =====================================================
+   AI BUTTON — white
+   ===================================================== */
+.btn-ai-white {
+  background: #ffffff !important;
+  color: #0a0a0a !important;
+}
+.btn-ai-white:hover {
+  opacity: 0.88 !important;
+}
+
+/* =====================================================
+   CONTACT FORM MOBILE FIX
+   ===================================================== */
+@media (max-width: 768px) {
+  section > div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  .logo-hero-band { margin-top: 72px; padding: 20px 0; }
+  .lhb-logo { width: calc(100% - 32px); }
+}
+
+/* Big screen adjustments */
+@media (min-width: 1400px) {
+  .logo-hero-band { margin-top: 84px; }
+}
+@media (min-width: 1920px) {
+  .logo-hero-band { margin-top: 90px; padding: 40px 0; }
+}
+
+/* Contact form — mobile stack */
+@media (max-width: 768px) {
+  .contact-section > div {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    padding: 0 !important;
+  }
+  .contact-section {
+    padding: 48px 20px !important;
+  }
+  .contact-section form {
+    width: 100% !important;
+  }
+  .contact-section form > div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
 }
