@@ -269,15 +269,12 @@ section form p{ color:rgba(255,255,255,0.55) !important; }
 
 
 
-/* ============================================================
-   IDENTITY BAND — flag left, logo center, flag right
-   Road stripe yellow dashes above and below
-   ============================================================ */
+/* IDENTITY BAND */
 .identity-band{
   position:relative;
   width:100%;
-  background:#0a0a0a;
-  padding:20px 40px;
+  background:#0d0d0d;
+  padding:12px 40px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -288,51 +285,44 @@ section form p{ color:rgba(255,255,255,0.55) !important; }
   content:'';
   position:absolute;
   top:0;left:0;right:0;
-  height:4px;
-  background:repeating-linear-gradient(90deg,#FFDD00 0,#FFDD00 50px,transparent 50px,transparent 78px);
+  height:3px;
+  background:repeating-linear-gradient(90deg,#FFDD00 0,#FFDD00 48px,transparent 48px,transparent 74px);
 }
 .identity-band::after{
   content:'';
   position:absolute;
   bottom:0;left:0;right:0;
-  height:4px;
-  background:repeating-linear-gradient(90deg,#FFDD00 0,#FFDD00 50px,transparent 50px,transparent 78px);
+  height:3px;
+  background:repeating-linear-gradient(90deg,#FFDD00 0,#FFDD00 48px,transparent 48px,transparent 74px);
 }
-.identity-band .ib-flag-left,
-.identity-band .ib-flag-right{
+.ib-flag-left,.ib-flag-right{
   position:absolute;
   top:0;
-  width:40%;
+  width:35%;
   height:100%;
   background-image:url('images/american-flag.png');
   background-size:cover;
   background-position:center;
-  opacity:0.09;
+  opacity:0.07;
   pointer-events:none;
 }
-.identity-band .ib-flag-left{ left:0; }
-.identity-band .ib-flag-right{ right:0; transform:scaleX(-1); }
-.identity-band .ib-vignette{
+.ib-flag-left{left:0;}
+.ib-flag-right{right:0;transform:scaleX(-1);}
+.ib-vignette{
   position:absolute;
   inset:0;
-  background:radial-gradient(ellipse 50% 100% at 50% 50%,#0a0a0a 25%,transparent 72%);
+  background:radial-gradient(ellipse 45% 100% at 50% 50%,#0d0d0d 20%,transparent 70%);
   pointer-events:none;
 }
 .identity-band-name{
   position:relative;
   z-index:2;
   font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(1.1rem,2vw,1.7rem);
-  letter-spacing:0.20em;
+  font-size:clamp(1rem,1.8vw,1.5rem);
+  letter-spacing:0.24em;
   color:#ffffff;
   text-align:center;
   text-transform:uppercase;
-}
-
-/* Nav — keep original yellow border, just fix the position since identity band handles spacing */
-.identity-band + .mobile-menu,
-nav + .identity-band{
-  /* handled by margin-top on identity-band */
 }
 
 /* Big screen */
@@ -348,7 +338,6 @@ nav + .identity-band{
   .identity-band{margin-top:90px;}
   .hero-logo-bar{max-width:900px;}
   .hero-tagline{font-size:clamp(5rem,7vw,9rem);}
-  .identity-band-name{font-size:clamp(1.4rem,1.8vw,2.1rem);}
   .section{padding:100px 60px;}
   .section-title{font-size:clamp(3.2rem,4.5vw,5rem);}
   .service-name{font-size:1.2rem !important;}
@@ -364,6 +353,29 @@ nav + .identity-band{
   .hero-tagline{font-size:clamp(6rem,7vw,11rem);}
 }
 @media(max-width:768px){
-  .identity-band{margin-top:72px;padding:14px 20px;}
-  .identity-band-name{font-size:0.85rem;letter-spacing:0.14em;}
+  .identity-band{margin-top:72px;padding:10px 20px;}
+  .identity-band-name{font-size:0.8rem;letter-spacing:0.14em;}
+}
+
+/* Identity band logo */
+.identity-band-logo{
+  position:relative;
+  z-index:2;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  max-width:480px;
+}
+.identity-band-logo img{
+  width:100%;
+  height:auto;
+  max-height:90px;
+  object-fit:contain;
+  filter:drop-shadow(0 2px 12px rgba(0,0,0,0.8));
+}
+
+/* Hide nav logo (home button) */
+nav .logo{
+  display:none;
 }
