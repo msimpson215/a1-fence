@@ -1,320 +1,274 @@
-<!-- ============================================================
-     A1 PROFESSIONAL ASPHALT — HERO SECTION
-     Paste this into Copilot / your site template
-     ============================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A1 Professional Asphalt &amp; Sealing LLC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-<style>
-  /* === RESET & BASE === */
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+<header class="site-header">
+  <a href="index.html" class="nav-brand" aria-label="A1 Professional Asphalt home">
+    <img src="A1__asphalt_logo.jpeg" alt="A1 Professional Asphalt &amp; Sealing LLC" />
+  </a>
 
-  /* === HERO WRAPPER === */
-  .a1-hero {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    background-color: #0a0c0f;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    font-family: 'Oswald', 'Impact', sans-serif;
-  }
+  <button class="hamburger" onclick="toggleMenu(event)" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 
-  /* === BACKGROUND FLAGS (left + right, faded) === */
-  .a1-flag-left,
-  .a1-flag-right {
-    position: absolute;
-    top: 0;
-    width: 42%;
-    height: 100%;
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.07;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .a1-flag-left  { left: 0;  transform: scaleX(-1); }
-  .a1-flag-right { right: 0; }
-
-  /* Dark gradient overlay so center stays readable */
-  .a1-hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 70% 80% at 50% 50%, transparent 30%, #0a0c0f 80%);
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  /* === NAV BAR === */
-  .a1-nav {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 40px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    background: rgba(10,12,15,0.75);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-  }
-
-  .a1-nav-links {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-  }
-
-  .a1-nav-links a {
-    color: rgba(255,255,255,0.75);
-    text-decoration: none;
-    font-family: 'Oswald', 'Impact', sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
-  .a1-nav-links a:hover { color: #c9a84c; }
-
-  .a1-nav-actions {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-  }
-
-  .a1-btn-ai {
-    background: transparent;
-    border: 1px solid rgba(201,168,76,0.6);
-    color: #c9a84c;
-    padding: 8px 18px;
-    font-family: 'Oswald', 'Impact', sans-serif;
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-  }
-  .a1-btn-ai:hover {
-    background: #c9a84c;
-    color: #0a0c0f;
-  }
-
-  .a1-btn-phone {
-    background: #c9a84c;
-    border: 1px solid #c9a84c;
-    color: #0a0c0f;
-    padding: 8px 20px;
-    font-family: 'Oswald', 'Impact', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s, opacity 0.2s;
-  }
-  .a1-btn-phone:hover { opacity: 0.85; }
-
-  /* === CENTER LOGO BAND === */
-  .a1-logo-band {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    padding: 60px 20px 20px;
-    text-align: center;
-  }
-
-  .a1-logo-wrap {
-    margin-bottom: 32px;
-  }
-
-  .a1-logo-wrap img {
-    max-width: 420px;
-    width: 90vw;
-    height: auto;
-    display: block;
-    /* subtle gold glow to lift logo off dark bg */
-    filter: drop-shadow(0 0 28px rgba(201,168,76,0.25));
-  }
-
-  /* === THIN GOLD DIVIDER === */
-  .a1-divider {
-    width: 80px;
-    height: 2px;
-    background: #c9a84c;
-    margin: 0 auto 28px;
-  }
-
-  /* === HERO TEXT === */
-  .a1-location {
-    font-family: 'Oswald', 'Impact', sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: #c9a84c;
-    margin-bottom: 16px;
-  }
-
-  .a1-headline {
-    font-family: 'Oswald', 'Impact', sans-serif;
-    font-size: clamp(36px, 6vw, 72px);
-    font-weight: 700;
-    line-height: 1.05;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: #ffffff;
-    margin-bottom: 36px;
-  }
-
-  .a1-cta-group {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .a1-cta-primary {
-    background: #c9a84c;
-    color: #0a0c0f;
-    padding: 14px 36px;
-    font-family: 'Oswald', 'Impact', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: opacity 0.2s;
-  }
-  .a1-cta-primary:hover { opacity: 0.85; }
-
-  .a1-cta-secondary {
-    background: transparent;
-    color: rgba(255,255,255,0.8);
-    padding: 14px 36px;
-    font-family: 'Oswald', 'Impact', sans-serif;
-    font-size: 14px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid rgba(255,255,255,0.3);
-    cursor: pointer;
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .a1-cta-secondary:hover {
-    border-color: #c9a84c;
-    color: #c9a84c;
-  }
-
-  /* === BOTTOM TRUST BAR === */
-  .a1-trust-bar {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    background: rgba(201,168,76,0.08);
-    border-top: 1px solid rgba(201,168,76,0.2);
-    display: flex;
-    justify-content: center;
-    gap: 48px;
-    flex-wrap: wrap;
-    padding: 18px 40px;
-  }
-
-  .a1-trust-item {
-    color: rgba(255,255,255,0.6);
-    font-family: 'Oswald', 'Impact', sans-serif;
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-  .a1-trust-item strong {
-    color: #c9a84c;
-    margin-right: 6px;
-  }
-
-  /* === RESPONSIVE === */
-  @media (max-width: 768px) {
-    .a1-nav { padding: 14px 20px; }
-    .a1-nav-links { gap: 18px; }
-    .a1-nav-links a { font-size: 11px; }
-    .a1-btn-ai { display: none; }
-    .a1-trust-bar { gap: 24px; }
-  }
-  @media (max-width: 480px) {
-    .a1-nav-links { display: none; }
-  }
-</style>
-
-<!-- Load Oswald from Google Fonts (clean, bold, industrial) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
-
-<!-- ============================================================
-     HERO HTML
-     ============================================================ -->
-<section class="a1-hero">
-
-  <!-- Background flags -->
-  <div class="a1-flag-left"></div>
-  <div class="a1-flag-right"></div>
-
-  <!-- ── TOP NAV ── -->
-  <nav class="a1-nav">
-    <ul class="a1-nav-links">
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Our Work</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    <div class="a1-nav-actions">
-      <a class="a1-btn-ai" href="#">Talk with Our A.I. Team</a>
-      <a class="a1-btn-phone" href="tel:6189293301">(618) 929-3301</a>
+  <nav class="desktop-nav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <div class="has-drop">
+      <a href="#services">Services</a>
+      <ul class="drop">
+        <li><a href="ai-estimator.html">AI Estimator</a></li>
+        <li><a href="sealcoating.html">Sealcoating</a></li>
+        <li><a href="crack-filling.html">Crack Filling</a></li>
+        <li><a href="parking-lot-striping.html">Parking Lot Striping</a></li>
+        <li><a href="asphalt-patching.html">Asphalt Patching</a></li>
+        <li><a href="concrete-work.html">Concrete Work</a></li>
+        <li><a href="bollard-installation.html">Bollard Installation</a></li>
+        <li><a href="ada-compliance.html">ADA Compliance</a></li>
+      </ul>
     </div>
+    <a href="our-work.html">Our Work</a>
+    <a href="about.html">About</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <!-- ── BIG CENTER LOGO + HEADLINE ── -->
-  <div class="a1-logo-band">
-
-    <div class="a1-logo-wrap">
-      <!-- Replace src with your actual logo path -->
-      <img src="/images/A1__asphalt_logo.jpeg" alt="A1 Professional Asphalt Logo">
-    </div>
-
-    <div class="a1-divider"></div>
-
-    <p class="a1-location">St. Louis &amp; The Midwest</p>
-
-    <h1 class="a1-headline">
-      The Last<br>
-      Asphalt Company<br>
-      You'll Ever Call
-    </h1>
-
-    <div class="a1-cta-group">
-      <a class="a1-cta-primary" href="tel:6189293301">Call Now — Free Estimate</a>
-      <a class="a1-cta-secondary" href="#">View Our Work</a>
-    </div>
-
+  <div class="nav-actions">
+    <a href="https://a1-asphalt-voxtalk-3.onrender.com/" target="_blank" class="ai-nav">Talk With AI</a>
+    <a href="tel:16189293301" class="phone-nav">(618) 929-3301</a>
   </div>
+</header>
 
-  <!-- ── BOTTOM TRUST BAR ── -->
-  <div class="a1-trust-bar">
-    <span class="a1-trust-item"><strong>25+</strong> Years in Business</span>
-    <span class="a1-trust-item"><strong>Licensed</strong> &amp; Insured</span>
-    <span class="a1-trust-item"><strong>Free</strong> Estimates</span>
-    <span class="a1-trust-item"><strong>Serving</strong> St. Louis &amp; Midwest</span>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="#services">Services</a>
+  <a href="sealcoating.html">Sealcoating</a>
+  <a href="crack-filling.html">Crack Filling</a>
+  <a href="parking-lot-striping.html">Parking Lot Striping</a>
+  <a href="asphalt-patching.html">Asphalt Patching</a>
+  <a href="our-work.html">Our Work</a>
+  <a href="about.html">About</a>
+  <a href="https://a1-asphalt-voxtalk-3.onrender.com/" target="_blank">Talk With AI</a>
+  <a href="tel:16189293301">(618) 929-3301</a>
+</div>
+
+<section class="hero">
+  <div class="hero-flags" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <p class="eyebrow">Commercial • Municipal • Industrial</p>
+    <div class="hero-logo-card">
+      <img src="A1__asphalt_logo.jpeg" alt="A1 Professional Asphalt &amp; Sealing LLC" />
+    </div>
+    <h1>The Last Asphalt Company You'll Ever Call</h1>
+    <p class="hero-subtitle">Professional pavement maintenance for St. Louis, the Midwest, and beyond.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-primary">Request a Free Estimate</a>
+      <a href="tel:16189293301" class="btn btn-secondary">Call (618) 929-3301</a>
+    </div>
   </div>
-
 </section>
-<!-- ============================================================
-     END HERO SECTION
-     ============================================================ -->
+
+<section class="brand-strip" aria-label="Trusted brands">
+  <p>Trusted by America's leading brands</p>
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <img src="images/sams-club.png" alt="Sam's Club" />
+      <img src="images/walmart.jpg" alt="Walmart" />
+      <img src="images/lowes.png" alt="Lowe's" />
+      <img src="images/target.png" alt="Target" />
+      <img src="images/walgreens.png" alt="Walgreens" />
+      <img src="images/kohls.png" alt="Kohl's" />
+      <img src="images/manards.jpg" alt="Menards" />
+      <img src="images/sams-club.png" alt="Sam's Club" />
+      <img src="images/walmart.jpg" alt="Walmart" />
+      <img src="images/lowes.png" alt="Lowe's" />
+      <img src="images/target.png" alt="Target" />
+      <img src="images/walgreens.png" alt="Walgreens" />
+      <img src="images/kohls.png" alt="Kohl's" />
+      <img src="images/manards.jpg" alt="Menards" />
+    </div>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container center">
+    <p class="section-kicker">What We Do</p>
+    <h2>Full-Service <span>Pavement Solutions</span></h2>
+    <p>From small businesses to national retail chains, A1 delivers professional results with clean communication, dependable crews, and a finished lot that looks sharp.</p>
+  </div>
+</section>
+
+<section class="section services-section" id="services">
+  <div class="container">
+    <div class="section-heading center">
+      <p class="section-kicker">Our Services</p>
+      <h2><span>Our Services</span></h2>
+      <p>Built for commercial properties, retail centers, municipalities, industrial facilities, and general contractors.</p>
+    </div>
+
+    <div class="services-grid">
+      <a href="commercial.html" class="service-card" style="--img:url('images/commercial.jpg')">
+        <div class="service-photo"></div>
+        <div class="service-body"><h3>Commercial Properties</h3><p>Retail centers, office parks, and commercial facilities with full sealcoat and restripe programs.</p><span>Learn More →</span></div>
+      </a>
+      <a href="churches.html" class="service-card" style="--img:url('images/church.jpg')">
+        <div class="service-photo"></div>
+        <div class="service-body"><h3>Churches &amp; Institutions</h3><p>Parking lot maintenance for houses of worship, schools, and community facilities.</p><span>Learn More →</span></div>
+      </a>
+      <a href="strip-malls.html" class="service-card" style="--img:url('images/stripmallsretail.jpg')">
+        <div class="service-photo"></div>
+        <div class="service-body"><h3>Strip Malls &amp; Retail</h3><p>Multi-tenant retail properties, ADA compliance, fire lanes, and full striping packages.</p><span>Learn More →</span></div>
+      </a>
+      <a href="municipalities.html" class="service-card" style="--img:url('images/roads.jpg')">
+        <div class="service-photo"></div>
+        <div class="service-body"><h3>Roads &amp; Municipalities</h3><p>Municipal roads, private communities, access roads, crack fill, patch, and seal programs.</p><span>Learn More →</span></div>
+      </a>
+      <a href="general-contractors.html" class="service-card" style="--img:url('images/generalcontractor.jpg')">
+        <div class="service-photo"></div>
+        <div class="service-body"><h3>General Contractors</h3><p>Subcontract pavement work for GC projects with reliable crews and clean schedules.</p><span>Learn More →</span></div>
+      </a>
+      <a href="industrial.html" class="service-card" style="--img:url('images/industrial.jpg')">
+        <div class="service-photo"></div>
+        <div class="service-body"><h3>Industrial &amp; Warehouse</h3><p>Heavy-duty pavement maintenance for distribution centers, warehouses, and industrial facilities.</p><span>Learn More →</span></div>
+      </a>
+    </div>
+
+    <div class="center service-cta-wrap">
+      <a href="tel:16189293301" class="wide-cta">Speak With a Project Specialist Today →</a>
+    </div>
+  </div>
+</section>
+
+<section class="coverage-section">
+  <div class="arch-mark" aria-hidden="true"></div>
+  <div class="container">
+    <div class="section-heading center">
+      <p class="section-kicker">Coverage</p>
+      <h2>Serving the Midwest <br><span>&amp; Beyond</span></h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card"><strong>2012</strong><span>Est. • 13+ Years Strong</span></div>
+      <div class="stat-card"><strong>500+</strong><span>Commercial Projects</span></div>
+      <div class="stat-card"><strong>15</strong><span>States Served</span></div>
+      <div class="stat-card"><strong>4</strong><span>Office Locations</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews-section">
+  <div class="container">
+    <div class="reviews-header">
+      <div><p class="section-kicker">Google Reviews</p><h2>5.0 ★★★★★</h2><span>Verified customer feedback</span></div>
+    </div>
+    <div class="reviews-grid">
+      <article><div>★★★★★</div><p>“A1 handled multiple locations this season. On time, professional crew, and the lots look incredible.”</p><strong>— Facilities Director</strong></article>
+      <article><div>★★★★★</div><p>“Communication was clear the whole way through. They showed up when promised and the work looked sharp.”</p><strong>— Facilities Manager</strong></article>
+      <article><div>★★★★★</div><p>“Handled everything including sealcoat, restripe, ADA compliance, and fire lanes. Night and day difference.”</p><strong>— Property Manager</strong></article>
+    </div>
+  </div>
+</section>
+
+<section class="podcast-section">
+  <div class="container two-col">
+    <div>
+      <p class="section-kicker">Owner Podcast</p>
+      <h2>Hear It Straight <br><span>From Joe</span></h2>
+      <p>Joe talks about A1, how the company grew, and why better customer communication matters on every project.</p>
+    </div>
+    <div class="audio-card">
+      <strong>🎙 Scaling an Asphalt Empire</strong>
+      <span>Joe Schanz — Owner, A1 Professional Asphalt &amp; Sealing LLC</span>
+      <audio controls preload="metadata">
+        <source src="Scaling_an_asphalt_empire_with_AI.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+  </div>
+</section>
+
+<section class="video-section">
+  <div class="container">
+    <p class="section-kicker">Meet the Owner</p>
+    <h2>Joe on Camera — <span>What A1 Stands For</span></h2>
+    <div class="video-box"><div class="play-btn">▶</div><p>Owner video coming soon</p></div>
+  </div>
+</section>
+
+<section class="ai-section" id="ai">
+  <div class="container two-col">
+    <div>
+      <p class="section-kicker">Customer Support</p>
+      <h2>Smarter Customer Support <br><span>Any Time You Need It</span></h2>
+      <p>A1 uses modern tools to make it easier for customers to get answers, understand services, and connect with the right person faster.</p>
+      <p>The AI assistant is available around the clock, but the company still stays grounded in real people, real crews, and real workmanship.</p>
+      <a href="https://a1-asphalt-voxtalk-3.onrender.com/" target="_blank" class="btn btn-primary">Talk With AI Now →</a>
+    </div>
+    <div class="ai-badge">
+      <img src="A1__asphalt_logo.jpeg" alt="A1 Professional Asphalt" />
+      <span>Click the AI button when you want fast answers.</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container center">
+    <h2>Ready to Get Your Estimate Started?</h2>
+    <p>Call us or request a free estimate online — fast response, real answers.</p>
+    <div class="hero-buttons">
+      <a href="tel:16189293301" class="btn btn-primary">(618) 929-3301</a>
+      <a href="tel:13149495660" class="btn btn-secondary">(314) 949-5660</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <p class="section-kicker">Get a Fast Quote</p>
+      <h2>Request Your Free Estimate</h2>
+      <p>Tell us what you need and where the job is located. We’ll respond quickly with next steps.</p>
+      <p><strong>Call:</strong> <a href="tel:16189293301">(618) 929-3301</a></p>
+      <p><strong>Alt:</strong> <a href="tel:13149495660">(314) 949-5660</a></p>
+    </div>
+    <form class="quote-form">
+      <div class="form-row"><input type="text" placeholder="Name" /><input type="tel" placeholder="Phone" /></div>
+      <div class="form-row"><input type="email" placeholder="Email" /><select><option>Service...</option><option>Sealcoating</option><option>Crack Filling</option><option>Striping</option><option>Patching</option></select></div>
+      <input type="text" placeholder="Job Location / City, State" />
+      <textarea placeholder="Details"></textarea>
+      <button type="submit">Send Request</button>
+      <small>Or call us directly.</small>
+    </form>
+  </div>
+</section>
+
+<section class="slogan-band">
+  <blockquote>“If you don’t use A1 Asphalt, it’s your own <span>asphalt</span>”</blockquote>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><img src="A1__asphalt_logo.jpeg" alt="A1 Professional Asphalt" /><p>A1 Professional Asphalt &amp; Sealing LLC provides professional pavement solutions across St. Louis, the Midwest, and beyond.</p></div>
+    <div><h4>Services</h4><a href="sealcoating.html">Sealcoating</a><a href="crack-filling.html">Crack Filling</a><a href="parking-lot-striping.html">Parking Lot Striping</a><a href="asphalt-patching.html">Asphalt Patching</a></div>
+    <div><h4>Company</h4><a href="our-work.html">Our Work</a><a href="about.html">About</a><a href="#contact">Contact</a></div>
+    <div><h4>Contact</h4><a href="tel:16189293301">(618) 929-3301</a><a href="tel:13149495660">(314) 949-5660</a></div>
+  </div>
+  <div class="copyright">© 2026 A1 Professional Asphalt &amp; Sealing LLC. All rights reserved.</div>
+</footer>
+
+<script>
+function toggleMenu(e){
+  if(e) e.stopPropagation();
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+document.addEventListener('click', function(e){
+  const menu = document.getElementById('mobileMenu');
+  const button = document.querySelector('.hamburger');
+  if(menu && button && !menu.contains(e.target) && !button.contains(e.target)) menu.classList.remove('open');
+});
+</script>
+</body>
+</html>
