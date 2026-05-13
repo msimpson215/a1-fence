@@ -1,320 +1,344 @@
 <!-- ============================================================
      A1 PROFESSIONAL ASPHALT — HERO SECTION
-     Paste this into Copilot / your site template
+     Drop-in replacement — keeps all original class names
      ============================================================ -->
+
+<!-- Google Font: Bebas Neue (already used on site) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-  /* === RESET & BASE === */
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+/* ============================================================
+   HERO SECTION — FULL REWRITE
+   ============================================================ */
 
-  /* === HERO WRAPPER === */
-  .a1-hero {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    background-color: #0a0c0f;
-    display: flex;
+/* === WRAPPER === */
+.hero-wrapper {
+  position: relative;
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.70), rgba(0,0,0,.80)),
+    url('/images/stlouis-background.jpg') center / cover no-repeat;
+  overflow: hidden;
+  color: white;
+  font-family: 'Bebas Neue', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ============================================================
+   BACKGROUND FLAGS — texture only, never the focus
+   ============================================================ */
+.flag {
+  position: absolute;
+  top: 0;
+  width: 38%;
+  height: 100%;
+  background-image: url('/images/american-flag.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.09;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.flag-left  { left: 0; }
+.flag-right { right: 0; transform: scaleX(-1); }
+
+/* Radial vignette crushes flags in the center — logo stays clean */
+.hero-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 65% 70% at 50% 45%, transparent 20%, rgba(0,0,0,0.75) 75%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ============================================================
+   NAV BAR
+   ============================================================ */
+.top-nav {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 48px;
+  background: rgba(0,0,0,0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-left a {
+  color: rgba(255,255,255,0.78);
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.14em;
+  transition: color 0.2s;
+}
+.nav-left a:hover { color: #d4a017; }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* AI button — gold outline */
+.ai-btn {
+  color: #d4a017 !important;
+  border: 1.5px solid #d4a017;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.ai-btn:hover {
+  background: #d4a017;
+  color: #0a0c0f !important;
+}
+
+/* Phone button — solid white, black text */
+.phone-btn {
+  background: #ffffff;
+  color: #111111 !important;
+  padding: 10px 22px;
+  border-radius: 4px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+.phone-btn:hover { opacity: 0.88; }
+
+/* ============================================================
+   LARGE CENTER LOGO — the hero, the boss, the whole point
+   ============================================================ */
+.main-logo-wrap {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 52px;
+  margin-bottom: 12px;
+}
+
+.main-logo {
+  width: min(820px, 82vw);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 6px 32px rgba(212,160,23,0.22)) drop-shadow(0 2px 8px rgba(0,0,0,0.7));
+}
+
+/* Gold accent line under logo */
+.main-logo-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 2px;
+  background: #d4a017;
+}
+
+/* ============================================================
+   HERO TEXT
+   ============================================================ */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  margin-top: 44px;
+  padding: 0 24px 100px;
+}
+
+.hero-location {
+  color: #d4a017;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.hero-content h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.6rem, 9vw, 7.5rem);
+  line-height: 0.94;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  margin: 0 0 40px;
+}
+
+/* CTA buttons below headline */
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-cta-primary {
+  background: #d4a017;
+  color: #0a0c0f;
+  padding: 14px 38px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  border: none;
+  border-radius: 3px;
+  transition: opacity 0.2s;
+}
+.hero-cta-primary:hover { opacity: 0.85; }
+
+.hero-cta-secondary {
+  background: transparent;
+  color: rgba(255,255,255,0.82);
+  padding: 14px 38px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  border: 1.5px solid rgba(255,255,255,0.32);
+  border-radius: 3px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.hero-cta-secondary:hover {
+  border-color: #d4a017;
+  color: #d4a017;
+}
+
+/* ============================================================
+   BOTTOM TRUST BAR
+   ============================================================ */
+.hero-trust-bar {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  margin-top: auto;
+  background: rgba(212,160,23,0.07);
+  border-top: 1px solid rgba(212,160,23,0.22);
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  padding: 16px 40px;
+}
+
+.hero-trust-bar span {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+.hero-trust-bar strong {
+  color: #d4a017;
+  margin-right: 5px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .top-nav {
     flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    font-family: 'Oswald', 'Impact', sans-serif;
-  }
-
-  /* === BACKGROUND FLAGS (left + right, faded) === */
-  .a1-flag-left,
-  .a1-flag-right {
-    position: absolute;
-    top: 0;
-    width: 42%;
-    height: 100%;
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.07;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .a1-flag-left  { left: 0;  transform: scaleX(-1); }
-  .a1-flag-right { right: 0; }
-
-  /* Dark gradient overlay so center stays readable */
-  .a1-hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 70% 80% at 50% 50%, transparent 30%, #0a0c0f 80%);
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  /* === NAV BAR === */
-  .a1-nav {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 40px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    background: rgba(10,12,15,0.75);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-  }
-
-  .a1-nav-links {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-  }
-
-  .a1-nav-links a {
-    color: rgba(255,255,255,0.75);
-    text-decoration: none;
-    font-family: 'Oswald', 'Impact', sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
-  .a1-nav-links a:hover { color: #c9a84c; }
-
-  .a1-nav-actions {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-  }
-
-  .a1-btn-ai {
-    background: transparent;
-    border: 1px solid rgba(201,168,76,0.6);
-    color: #c9a84c;
-    padding: 8px 18px;
-    font-family: 'Oswald', 'Impact', sans-serif;
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-  }
-  .a1-btn-ai:hover {
-    background: #c9a84c;
-    color: #0a0c0f;
-  }
-
-  .a1-btn-phone {
-    background: #c9a84c;
-    border: 1px solid #c9a84c;
-    color: #0a0c0f;
-    padding: 8px 20px;
-    font-family: 'Oswald', 'Impact', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s, opacity 0.2s;
-  }
-  .a1-btn-phone:hover { opacity: 0.85; }
-
-  /* === CENTER LOGO BAND === */
-  .a1-logo-band {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    padding: 60px 20px 20px;
-    text-align: center;
-  }
-
-  .a1-logo-wrap {
-    margin-bottom: 32px;
-  }
-
-  .a1-logo-wrap img {
-    max-width: 420px;
-    width: 90vw;
-    height: auto;
-    display: block;
-    /* subtle gold glow to lift logo off dark bg */
-    filter: drop-shadow(0 0 28px rgba(201,168,76,0.25));
-  }
-
-  /* === THIN GOLD DIVIDER === */
-  .a1-divider {
-    width: 80px;
-    height: 2px;
-    background: #c9a84c;
-    margin: 0 auto 28px;
-  }
-
-  /* === HERO TEXT === */
-  .a1-location {
-    font-family: 'Oswald', 'Impact', sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: #c9a84c;
-    margin-bottom: 16px;
-  }
-
-  .a1-headline {
-    font-family: 'Oswald', 'Impact', sans-serif;
-    font-size: clamp(36px, 6vw, 72px);
-    font-weight: 700;
-    line-height: 1.05;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: #ffffff;
-    margin-bottom: 36px;
-  }
-
-  .a1-cta-group {
-    display: flex;
     gap: 16px;
+    padding: 16px 24px;
+  }
+  .nav-left {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
   }
+  .main-logo { width: 88vw; }
+  .hero-content h1 { font-size: 3.8rem; }
+  .flag { width: 45%; opacity: 0.07; }
+  .hero-trust-bar { gap: 24px; }
+}
 
-  .a1-cta-primary {
-    background: #c9a84c;
-    color: #0a0c0f;
-    padding: 14px 36px;
-    font-family: 'Oswald', 'Impact', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: opacity 0.2s;
-  }
-  .a1-cta-primary:hover { opacity: 0.85; }
-
-  .a1-cta-secondary {
-    background: transparent;
-    color: rgba(255,255,255,0.8);
-    padding: 14px 36px;
-    font-family: 'Oswald', 'Impact', sans-serif;
-    font-size: 14px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid rgba(255,255,255,0.3);
-    cursor: pointer;
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .a1-cta-secondary:hover {
-    border-color: #c9a84c;
-    color: #c9a84c;
-  }
-
-  /* === BOTTOM TRUST BAR === */
-  .a1-trust-bar {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    background: rgba(201,168,76,0.08);
-    border-top: 1px solid rgba(201,168,76,0.2);
-    display: flex;
-    justify-content: center;
-    gap: 48px;
-    flex-wrap: wrap;
-    padding: 18px 40px;
-  }
-
-  .a1-trust-item {
-    color: rgba(255,255,255,0.6);
-    font-family: 'Oswald', 'Impact', sans-serif;
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-  .a1-trust-item strong {
-    color: #c9a84c;
-    margin-right: 6px;
-  }
-
-  /* === RESPONSIVE === */
-  @media (max-width: 768px) {
-    .a1-nav { padding: 14px 20px; }
-    .a1-nav-links { gap: 18px; }
-    .a1-nav-links a { font-size: 11px; }
-    .a1-btn-ai { display: none; }
-    .a1-trust-bar { gap: 24px; }
-  }
-  @media (max-width: 480px) {
-    .a1-nav-links { display: none; }
-  }
+@media (max-width: 500px) {
+  .ai-btn { display: none; }
+  .hero-cta-group { flex-direction: column; align-items: center; }
+  .flag { display: none; }
+}
 </style>
 
-<!-- Load Oswald from Google Fonts (clean, bold, industrial) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
-
 <!-- ============================================================
-     HERO HTML
+     HTML
      ============================================================ -->
-<section class="a1-hero">
+<section class="hero-wrapper">
 
-  <!-- Background flags -->
-  <div class="a1-flag-left"></div>
-  <div class="a1-flag-right"></div>
+  <!-- Background flags — texture, not focus -->
+  <div class="flag flag-left"></div>
+  <div class="flag flag-right"></div>
 
-  <!-- ── TOP NAV ── -->
-  <nav class="a1-nav">
-    <ul class="a1-nav-links">
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Our Work</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    <div class="a1-nav-actions">
-      <a class="a1-btn-ai" href="#">Talk with Our A.I. Team</a>
-      <a class="a1-btn-phone" href="tel:6189293301">(618) 929-3301</a>
+  <!-- NAV -->
+  <nav class="top-nav">
+    <div class="nav-left">
+      <a href="#">SERVICES</a>
+      <a href="#">OUR WORK</a>
+      <a href="#">ABOUT</a>
+      <a href="#">CONTACT</a>
+    </div>
+    <div class="nav-right">
+      <a class="ai-btn" href="#">TALK WITH OUR A.I. TEAM</a>
+      <a class="phone-btn" href="tel:6189293301">(618) 929-3301</a>
     </div>
   </nav>
 
-  <!-- ── BIG CENTER LOGO + HEADLINE ── -->
-  <div class="a1-logo-band">
-
-    <div class="a1-logo-wrap">
-      <!-- Replace src with your actual logo path -->
-      <img src="/images/A1__asphalt_logo.jpeg" alt="A1 Professional Asphalt Logo">
-    </div>
-
-    <div class="a1-divider"></div>
-
-    <p class="a1-location">St. Louis &amp; The Midwest</p>
-
-    <h1 class="a1-headline">
-      The Last<br>
-      Asphalt Company<br>
-      You'll Ever Call
-    </h1>
-
-    <div class="a1-cta-group">
-      <a class="a1-cta-primary" href="tel:6189293301">Call Now — Free Estimate</a>
-      <a class="a1-cta-secondary" href="#">View Our Work</a>
-    </div>
-
+  <!-- BIG LOGO — first thing your eye hits -->
+  <div class="main-logo-wrap">
+    <img
+      src="/images/A1__asphalt_logo.jpeg"
+      alt="A1 Professional Asphalt"
+      class="main-logo"
+    >
   </div>
 
-  <!-- ── BOTTOM TRUST BAR ── -->
-  <div class="a1-trust-bar">
-    <span class="a1-trust-item"><strong>25+</strong> Years in Business</span>
-    <span class="a1-trust-item"><strong>Licensed</strong> &amp; Insured</span>
-    <span class="a1-trust-item"><strong>Free</strong> Estimates</span>
-    <span class="a1-trust-item"><strong>Serving</strong> St. Louis &amp; Midwest</span>
+  <!-- HEADLINE + CTA -->
+  <div class="hero-content">
+    <p class="hero-location">St. Louis &amp; The Midwest</p>
+    <h1>
+      THE LAST<br>
+      ASPHALT COMPANY<br>
+      YOU'LL EVER CALL
+    </h1>
+    <div class="hero-cta-group">
+      <a class="hero-cta-primary" href="tel:6189293301">CALL FOR A FREE ESTIMATE</a>
+      <a class="hero-cta-secondary" href="#">VIEW OUR WORK</a>
+    </div>
+  </div>
+
+  <!-- TRUST BAR -->
+  <div class="hero-trust-bar">
+    <span><strong>25+</strong> Years in Business</span>
+    <span><strong>Licensed</strong> &amp; Insured</span>
+    <span><strong>Free</strong> Estimates</span>
+    <span><strong>Serving</strong> St. Louis &amp; The Midwest</span>
   </div>
 
 </section>
-<!-- ============================================================
-     END HERO SECTION
-     ============================================================ -->
