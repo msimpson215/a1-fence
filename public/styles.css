@@ -39,6 +39,7 @@ h2.display span{color:var(--yellow)}
 /* NAV */
 .site-header{position:sticky;top:0;z-index:1000;height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(4,4,4,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)}
 .nav-brand{width:110px;flex-shrink:0}
+.nav-brand img{max-height:64px;width:auto;object-fit:contain}
 .desktop-nav{display:flex;align-items:center;gap:6px;margin-left:28px}
 .desktop-nav a{font-size:.82rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.82);padding:0 14px;height:80px;display:inline-flex;align-items:center;transition:color .18s}
 .desktop-nav a:hover{color:var(--yellow)}
@@ -177,7 +178,9 @@ h2.display span{color:var(--yellow)}
   .site-header{height:74px;padding:0 20px}
   .mobile-menu{top:74px}
   .nav-brand{width:100px}
-  .services-grid,.reviews-grid,.stats-grid,.two-col,.contact-grid,.footer-grid{grid-template-columns:1fr}
+  .nav-brand img{max-height:58px}
+  .services-grid,.reviews-grid,.stats-grid,.footer-grid{grid-template-columns:repeat(2,1fr)}
+  .two-col,.contact-grid{grid-template-columns:1fr}
   .hero-flags{background:url('images/unitedstatesflag.jpg') center/cover no-repeat;opacity:.08}
   .form-row{grid-template-columns:1fr;margin-bottom:0}
   .form-row input,.form-row select{margin-bottom:12px}
@@ -186,6 +189,7 @@ h2.display span{color:var(--yellow)}
   .hero h1{font-size:clamp(2.8rem,11vw,4rem)}
   .hero-logo-wrap{width:92vw}
   .section,.services-section,.coverage-section,.reviews-section,.podcast-section,.video-section,.ai-section,.cta-section,.contact-section{padding:64px 0}
+  .services-grid,.reviews-grid,.stats-grid,.footer-grid{grid-template-columns:1fr}
   .stat-card strong{font-size:3.2rem}
   .ticker-track img{height:28px}
   .hero-buttons{gap:12px}
@@ -197,6 +201,7 @@ h2.display span{color:var(--yellow)}
   .site-header{height:88px;padding:0 52px}
   .desktop-nav a{height:88px}
   .has-drop .drop{top:88px}
+  .nav-brand img{max-height:72px}
   .hero-logo-wrap{width:min(860px,88vw)}
 }
 @media(min-width:1920px){
@@ -210,6 +215,7 @@ h2.display span{color:var(--yellow)}
   .site-header{padding:0 64px;height:94px}
   .desktop-nav a{height:94px}
   .has-drop .drop{top:94px}
+  .nav-brand img{max-height:78px}
   .hero-inner{width:min(1200px,86vw)}
   .hero-logo-wrap{width:min(960px,80vw)}
   .service-photo{height:220px}
@@ -224,6 +230,7 @@ h2.display span{color:var(--yellow)}
   .site-header{padding:0 100px;height:100px}
   .desktop-nav a{height:100px}
   .has-drop .drop{top:100px}
+  .nav-brand img{max-height:84px}
   .services-grid{grid-template-columns:repeat(4,1fr);gap:28px}
   .hero-inner{width:min(1600px,80vw)}
   .hero-logo-wrap{width:min(1100px,72vw)}
