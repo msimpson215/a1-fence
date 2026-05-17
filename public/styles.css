@@ -203,3 +203,34 @@ h2.display span{color:var(--yellow)}
   body{font-size:18px}
   .container{width:min(1480px,90vw)}
 }
+/* 2560px — QHD / 27″+ monitors */
+@media(min-width:2560px){
+  body{font-size:20px}
+  .container{width:min(1900px,86vw)}
+  .site-header{padding:0 64px;height:94px}
+  .desktop-nav a{height:94px}
+  .has-drop .drop{top:94px}
+  .hero-inner{width:min(1200px,86vw)}
+  .hero-logo-wrap{width:min(960px,80vw)}
+  .service-photo{height:220px}
+  .two-col{gap:96px}
+  .contact-grid{gap:80px}
+  .footer-grid{gap:56px}
+}
+/* 3440px+ — ultrawide 34–40″ monitors */
+@media(min-width:3440px){
+  body{font-size:23px}
+  .container{width:min(2600px,80vw)}
+  .site-header{padding:0 100px;height:100px}
+  .desktop-nav a{height:100px}
+  .has-drop .drop{top:100px}
+  .services-grid{grid-template-columns:repeat(4,1fr);gap:28px}
+  .hero-inner{width:min(1600px,80vw)}
+  .hero-logo-wrap{width:min(1100px,72vw)}
+  .service-photo{height:260px}
+  .two-col{gap:120px}
+  .contact-grid{gap:100px}
+  .footer-grid{gap:72px}
+  .video-box{height:480px}
+  .lead{max-width:900px}
+}
