@@ -241,3 +241,6 @@ h2.display span{color:var(--yellow)}
   .video-box{height:480px}
   .lead{max-width:900px}
 }
+* { color: inherit; }
+p, span, div, a, li, small { color: #ffffff !important; }
+.btn, button { color: inherit !important; }
