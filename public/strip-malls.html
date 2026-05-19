@@ -13,7 +13,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(0,0,0,0.97);
 .logo img{height:52px;width:auto;}
 .back{color:#ffffff;text-decoration:none;font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
 .back:hover{color:var(--yellow);}
-.call{background:#16a34a;color:#fff;padding:10px 22px;border-radius:4px;font-weight:800;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;}
+.phone-link{color:#fff;font-size:0.82rem;font-weight:900;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:0 18px;height:44px;display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,0.3);border-radius:4px;transition:border-color 0.2s;}
 .wrap{padding:140px 40px 80px;max-width:900px;margin:0 auto;}
 .lbl{display:inline-flex;align-items:center;gap:10px;font-size:0.72rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--yellow);margin-bottom:20px;}
 .lbl::before{content:'';width:28px;height:2px;background:var(--yellow);}
@@ -32,8 +32,27 @@ footer a{color:var(--yellow);text-decoration:none;}
 <body>
 <nav>
   <a href="index.html" class="logo"><img src="A1__asphalt_logo.jpeg" alt="A1 Professional Asphalt"/></a>
-  <a href="index.html" class="back">← Back to Home</a>
-  <a href="tel:6189293301" class="call">Call Now</a>
+  <div class="nav-center">
+    <div class="has-drop">
+      <a href="index.html#services">Services</a>
+      <ul class="drop">
+        <li><a href="ai-estimator.html">AI Estimator</a></li>
+        <li><a href="sealcoating.html">Sealcoating</a></li>
+        <li><a href="crack-filling.html">Crack Filling</a></li>
+        <li><a href="parking-lot-striping.html">Parking Lot Striping</a></li>
+        <li><a href="asphalt-patching.html">Asphalt Patching</a></li>
+        <li><a href="concrete-work.html">Concrete Work</a></li>
+        <li><a href="bollard-installation.html">Bollard Installation</a></li>
+        <li><a href="ada-compliance.html">ADA Compliance</a></li>
+      </ul>
+    </div>
+    <a href="our-work.html">Our Work</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="nav-right">
+    <a href="https://a1-asphalt-voxtalk-3.onrender.com/" target="_blank" class="btn-ai">A.I. Assistant</a>
+    <a href="tel:16189293301" class="phone-link">(618) 929-3301</a>
+  </div>
 </nav>
 <div class="wrap">
   <div class="lbl">A1 Professional Asphalt & Sealing</div>

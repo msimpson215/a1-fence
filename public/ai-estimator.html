@@ -64,13 +64,8 @@
       transition:opacity 0.2s, transform 0.2s;
     }
     .btn-ai:hover{opacity:0.88;transform:translateY(-1px);}
-    .call{
-      background:#16a34a;color:#fff;height:44px;padding:0 20px;border-radius:4px;
-      font-weight:800;font-size:0.8rem;letter-spacing:0.08em;
-      text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;
-      transition:opacity 0.2s, transform 0.2s;
-    }
-    .call:hover{opacity:0.88;transform:translateY(-1px);}
+    .phone-link{color:#fff;font-size:0.82rem;font-weight:900;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:0 18px;height:44px;display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,0.3);border-radius:4px;transition:border-color 0.2s;}
+    .phone-link:hover{border-color:var(--yellow);}
 
     .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;}
     .hamburger span{display:block;width:24px;height:2px;background:#fff;transition:all 0.3s;}
@@ -224,32 +219,29 @@
 
 <body>
   <nav>
-    <a href="index.html" class="logo"><img src="A1__asphalt_logo.jpeg" alt="A1 Professional Asphalt"/></a>
-
-    <div class="nav-center">
-      <div class="has-drop">
-        <a href="index.html#services">Services</a>
-        <ul class="drop">
-          <li><a href="ai-estimator.html" style="color:var(--yellow);font-weight:700;">AI Estimator</a></li>
-          <li><a href="sealcoating.html">Sealcoating</a></li>
-          <li><a href="crack-filling.html">Crack Filling</a></li>
-          <li><a href="parking-lot-striping.html">Parking Lot Striping</a></li>
-          <li><a href="asphalt-patching.html">Asphalt Patching</a></li>
-          <li><a href="concrete-work.html">Concrete Work</a></li>
-          <li><a href="bollard-installation.html">Bollard Installation</a></li>
-        </ul>
-      </div>
-      <a href="our-work.html">Our Work</a>
-      <a href="about.html">About</a>
+  <a href="index.html" class="logo"><img src="A1__asphalt_logo.jpeg" alt="A1 Professional Asphalt"/></a>
+  <div class="nav-center">
+    <div class="has-drop">
+      <a href="index.html#services">Services</a>
+      <ul class="drop">
+        <li><a href="ai-estimator.html">AI Estimator</a></li>
+        <li><a href="sealcoating.html">Sealcoating</a></li>
+        <li><a href="crack-filling.html">Crack Filling</a></li>
+        <li><a href="parking-lot-striping.html">Parking Lot Striping</a></li>
+        <li><a href="asphalt-patching.html">Asphalt Patching</a></li>
+        <li><a href="concrete-work.html">Concrete Work</a></li>
+        <li><a href="bollard-installation.html">Bollard Installation</a></li>
+        <li><a href="ada-compliance.html">ADA Compliance</a></li>
+      </ul>
     </div>
-
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
-
-    <div class="nav-right">
-      <a href="javascript:void(0)" class="btn-ai" onclick="openVox()">Talk to Our AI Asphalt Estimator</a>
-      <a href="tel:6189293301" class="call">&#128222; (618) 929-3301</a>
-    </div>
-  </nav>
+    <a href="our-work.html">Our Work</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="nav-right">
+    <a href="https://a1-asphalt-voxtalk-3.onrender.com/" target="_blank" class="btn-ai">A.I. Assistant</a>
+    <a href="tel:16189293301" class="phone-link">(618) 929-3301</a>
+  </div>
+</nav>
 
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html#services">Services</a>
