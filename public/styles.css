@@ -135,7 +135,15 @@ h2.display span{color:var(--yellow)}
 .play-btn{width:68px;height:68px;border-radius:50%;background:var(--yellow);color:#111;display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:pointer;transition:transform .2s}
 .play-btn:hover{transform:scale(1.08)}
 .video-box p{color:var(--muted);font-size:.88rem}
-.ai-badge{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ai-orb-wrap{display:flex;flex-direction:column;align-items:center;gap:20px;justify-content:center}
+.ai-orb{width:200px;height:200px;border-radius:50%;background:url('A1__asphalt_logo.jpeg') center center/contain no-repeat;background-color:#F5C518;box-shadow:0 0 60px rgba(245,197,24,0.4),0 0 120px rgba(245,197,24,0.15);animation:pulse 3s ease-in-out infinite;cursor:pointer}
+@keyframes pulse{0%,100%{transform:scale(1);box-shadow:0 0 60px rgba(245,197,24,0.4),0 0 120px rgba(245,197,24,0.15);}50%{transform:scale(1.06);box-shadow:0 0 80px rgba(245,197,24,0.6),0 0 160px rgba(245,197,24,0.25);}}
+.orb-label{font-size:0.85rem;color:#ffffff;text-align:center;letter-spacing:0.08em;text-transform:uppercase;font-weight:700}
+#vox-overlay{display:none;position:fixed;bottom:90px;right:24px;width:380px;height:520px;background:var(--black);border:1px solid var(--yellow);border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.8);z-index:9999}
+#vox-overlay.open{display:block;animation:voxIn 0.25s ease forwards}
+@keyframes voxIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+#vox-overlay iframe{width:100%;height:100%;border:none}
+#vox-close-btn{position:absolute;top:8px;right:12px;background:none;border:none;color:#fff;font-size:1.1rem;font-weight:900;cursor:pointer;z-index:10;line-height:1}
 
 /* CTA */
 .cta-section{padding:96px 0;background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.72)),url('images/asphalt-road.jpg') center/cover no-repeat;border-top:2px solid var(--yellow);border-bottom:2px solid var(--yellow);text-align:center}

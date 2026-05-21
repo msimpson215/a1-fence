@@ -209,13 +209,13 @@
   <div class="container two-col">
     <div>
       <p class="kicker">Innovation</p>
-      <h2 class="display">Incorporating Artificial Intelligence to<br><span>Elevate Your Experience</span></h2>
+      <h2 class="display">Incorporating <span>Artificial Intelligence</span> to<br>Elevate Your Experience</h2>
       <p>A1 uses modern tools to make it easier for customers to get answers, understand services, and connect with the right person faster.</p>
       <p>The A.I. assistant is available around the clock, but the company still stays grounded in real people, real crews, and real workmanship.</p>
     </div>
-    <div class="ai-badge">
-      <img src="A1__asphalt_logo.jpeg" alt="A1 Professional Asphalt" style="width:220px;border-radius:4px;margin:0 auto 24px;box-shadow:0 16px 50px rgba(245,197,24,.15);" />
-      <a href="https://a1-asphalt-voxtalk-3.onrender.com/" target="_blank" class="btn btn-primary" style="font-size:.9rem;padding:18px 36px;">Speak With Our A.I. Team &rarr;</a>
+    <div class="ai-orb-wrap">
+      <div class="ai-orb" id="aiOrb" onclick="openVox()" title="Press to start a conversation with our A.I."></div>
+      <span class="orb-label">Press to Start a Conversation<br>With Our A.I. Team Member</span>
     </div>
   </div>
 </section>
@@ -276,13 +276,14 @@ document.addEventListener('click', function(e){
   const button = document.querySelector('.hamburger');
   if(menu && button && !menu.contains(e.target) && !button.contains(e.target)) menu.classList.remove('open');
 });
-function openVox(){var o=document.getElementById('vox-overlay');o.style.display='block';}
-function closeVox(){var o=document.getElementById('vox-overlay');o.style.display='none';}
+function openVox(){var o=document.getElementById('vox-overlay');o.classList.add('open');o.style.display='block';}
+function closeVox(){var o=document.getElementById('vox-overlay');o.style.display='none';o.classList.remove('open');}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVox();});
+document.addEventListener('click',function(e){var o=document.getElementById('vox-overlay');if(o.style.display==='block'&&!o.contains(e.target)&&!e.target.closest('#aiOrb')){closeVox();}});
 </script>
-<div id="vox-overlay" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);display:none;">
-  <button id="vox-close-btn" onclick="closeVox()" style="position:absolute;top:20px;right:28px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;z-index:10000;">&#10005;</button>
-  <iframe src="https://a1-asphalt-voxtalk-3.onrender.com/" title="A1 AI Team Member" allow="microphone" style="width:90%;max-width:500px;height:80vh;border:none;border-radius:8px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);"></iframe>
+<div id="vox-overlay">
+  <button id="vox-close-btn" onclick="closeVox()">&#10005;</button>
+  <iframe src="https://a1-asphalt-voxtalk-3.onrender.com/" title="A1 AI Team Member" allow="microphone"></iframe>
 </div>
 </body>
 </html>
