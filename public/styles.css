@@ -64,13 +64,13 @@ h2.display span{color:var(--yellow)}
 /* HERO */
 .hero{position:relative;min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:var(--black)}
 .hero-bg{position:absolute;inset:0;background:url('asphalt background.jpg') center/cover no-repeat;opacity:.28}
-.hero-flags{position:absolute;inset:0;background:url('images/unitedstatesflag.jpg') left -20px top/42% auto no-repeat,url('images/unitedstatesflag.jpg') right -20px top/42% auto no-repeat;opacity:.18;filter:grayscale(.2)}
+.hero-flags{position:absolute;inset:0;background:url('images/unitedstatesflag.jpg') center/cover no-repeat;opacity:.14;filter:grayscale(.15)}
 .hero::after{content:'';position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(transparent,var(--black))}
 .hero-inner{position:relative;z-index:2;width:min(900px,92vw);padding:100px 0 80px;display:flex;flex-direction:column;align-items:center}
 .hero-logo-wrap{width:min(720px,90vw);margin:0 auto 16px;filter:drop-shadow(0 8px 40px rgba(0,0,0,.85))}
 .hero-logo-wrap img{width:100%}
 .logo-stripe{width:100%;max-width:720px;height:4px;margin:0 auto 36px;background:repeating-linear-gradient(90deg,var(--yellow) 0,var(--yellow) 52px,transparent 52px,transparent 80px)}
-.hero-location{font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:.28em;color:var(--yellow);margin-bottom:10px}
+.hero-location{font-size:1.1rem;font-weight:900;text-transform:uppercase;letter-spacing:.28em;color:#ffffff;margin-bottom:14px}
 .hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.2rem,7vw,6.5rem);letter-spacing:.04em;line-height:.95;color:#fff;text-shadow:0 10px 32px rgba(0,0,0,.7);margin-bottom:20px}
 .hero-sub{font-size:clamp(1rem,1.8vw,1.2rem);color:var(--muted);font-weight:600;max-width:540px;line-height:1.6;margin-bottom:36px}
 .hero-buttons{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
@@ -133,9 +133,7 @@ h2.display span{color:var(--yellow)}
 .play-btn{width:68px;height:68px;border-radius:50%;background:var(--yellow);color:#111;display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:pointer;transition:transform .2s}
 .play-btn:hover{transform:scale(1.08)}
 .video-box p{color:var(--muted);font-size:.88rem}
-.ai-badge{text-align:center}
-.ai-badge img{width:220px;border-radius:4px;margin:0 auto 18px;box-shadow:0 16px 50px rgba(245,197,24,.15)}
-.ai-badge span{display:block;color:var(--muted);font-size:.82rem;text-transform:uppercase;font-weight:700;letter-spacing:.1em}
+.ai-badge{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
 
 /* CTA */
 .cta-section{padding:96px 0;background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.72)),url('images/asphalt-road.jpg') center/cover no-repeat;border-top:2px solid var(--yellow);border-bottom:2px solid var(--yellow);text-align:center}
@@ -180,7 +178,7 @@ h2.display span{color:var(--yellow)}
   .mobile-menu{top:79px}
   .nav-brand{width:100px}
   .services-grid,.reviews-grid,.stats-grid,.two-col,.contact-grid,.footer-grid{grid-template-columns:1fr}
-  .hero-flags{background:url('images/unitedstatesflag.jpg') center/cover no-repeat;opacity:.08}
+  .hero-flags{opacity:.10}
   .form-row{grid-template-columns:1fr;margin-bottom:0}
   .form-row input,.form-row select{margin-bottom:12px}
 }
