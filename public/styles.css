@@ -28,13 +28,15 @@ img{max-width:100%;display:block}
 .kicker::before{content:'';width:26px;height:2px;background:var(--yellow)}
 h2.display{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,5vw,4.6rem);line-height:.95;letter-spacing:.04em}
 h2.display span{color:var(--yellow)}
-.lead{color:var(--muted);font-size:1.08rem;line-height:1.72;max-width:720px;margin-top:16px}
+.lead{color:var(--muted);font-size:1.08rem;line-height:1.72;max-width:720px;margin:16px auto 0}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:14px 28px;font-size:.8rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em;border-radius:var(--radius);transition:opacity .2s,transform .2s;white-space:nowrap}
 .btn:hover{opacity:.88;transform:translateY(-1px)}
 .btn-primary{background:var(--yellow);color:#0a0a0a}
 .btn-secondary{border:1px solid #ffffff;background:#ffffff;color:#fff}
 .btn-secondary:hover{border-color:var(--yellow)}
+.btn-phone{background:none;border:2px solid var(--yellow);color:var(--yellow);font-weight:900}
+.btn-phone:hover{background:var(--yellow);color:#0a0a0a}
 
 /* NAV */
 .site-header{position:sticky;top:0;z-index:1000;height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(4,4,4,.96);backdrop-filter:blur(14px);border-bottom:none}
@@ -64,7 +66,7 @@ h2.display span{color:var(--yellow)}
 /* HERO */
 .hero{position:relative;min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:var(--black)}
 .hero-bg{position:absolute;inset:0;background:url('asphalt background.jpg') center/cover no-repeat;opacity:.28}
-.hero-flags{position:absolute;inset:0;background:url('images/unitedstatesflag.jpg') center/cover no-repeat;opacity:.14;filter:grayscale(.15)}
+.hero-flags{position:absolute;inset:0;background:url('images/unitedstatesflag.jpg') center/cover no-repeat;opacity:.22;filter:grayscale(.1)}
 .hero::after{content:'';position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(transparent,var(--black))}
 .hero-inner{position:relative;z-index:2;width:min(900px,92vw);padding:100px 0 80px;display:flex;flex-direction:column;align-items:center}
 .hero-logo-wrap{width:min(720px,90vw);margin:0 auto 16px;filter:drop-shadow(0 8px 40px rgba(0,0,0,.85))}
@@ -79,9 +81,9 @@ h2.display span{color:var(--yellow)}
 .brand-strip{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0 24px;overflow:hidden}
 .brand-strip p{text-align:center;font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.22em;color:#ffffff;margin-bottom:16px}
 .ticker-wrap{overflow:hidden}
-.ticker-track{display:inline-flex;align-items:center;gap:44px;animation:ticker 15s linear infinite}
-.ticker-track img{height:36px;max-width:110px;object-fit:contain;opacity:.85;filter:grayscale(.2)}
-@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-track{display:inline-flex;align-items:center;gap:52px;animation:ticker 20s linear infinite;will-change:transform}
+.ticker-track img{height:36px;max-width:110px;object-fit:contain;opacity:.85;filter:grayscale(.2);flex-shrink:0}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-33.333%)}}
 
 /* INTRO */
 .intro-section{padding:80px 0;background:radial-gradient(circle at top,rgba(245,197,24,.06),transparent 40%),var(--dark)}
@@ -207,3 +209,8 @@ h2.display span{color:var(--yellow)}
 * { color: inherit; }
 p, span, div, a, li, small { color: #ffffff !important; }
 .btn, button { color: inherit !important; }
+.btn-phone { color: var(--yellow) !important; }
+.btn-primary { color: #0a0a0a !important; }
+.slogan-band span { color: var(--yellow) !important; }
+.service-card:hover .service-arrow { color: #111 !important; }
+.wide-cta:hover { color: #111 !important; }

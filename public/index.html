@@ -68,7 +68,7 @@
     <p class="hero-sub">Commercial sealcoating, striping, paving, and concrete services across St. Louis and the Midwest.</p>
     <div class="hero-buttons">
       <a href="#contact" class="btn btn-primary">Request a Free Estimate</a>
-      <a href="tel:16189293301" class="btn btn-secondary">&#9990; (618) 929-3301</a>
+      <a href="tel:16189293301" class="btn btn-phone">&#9990; (618) 929-3301</a>
     </div>
   </div>
 </section>
@@ -77,6 +77,13 @@
   <p>Trusted by America&#8217;s Leading Brands</p>
   <div class="ticker-wrap">
     <div class="ticker-track">
+      <img src="images/sams-club.png" alt="Sam's Club" />
+      <img src="images/walmart.jpg" alt="Walmart" />
+      <img src="images/lowes.png" alt="Lowe's" />
+      <img src="images/target.png" alt="Target" />
+      <img src="images/walgreens.png" alt="Walgreens" />
+      <img src="images/kohls.png" alt="Kohl's" />
+      <img src="images/manards.jpg" alt="Menards" />
       <img src="images/sams-club.png" alt="Sam's Club" />
       <img src="images/walmart.jpg" alt="Walmart" />
       <img src="images/lowes.png" alt="Lowe's" />
@@ -107,8 +114,8 @@
   <div class="container">
     <div class="section-heading center">
       <p class="kicker">Our Services</p>
-      <h2 class="display"><span>Our Services</span></h2>
-      <p>Built for commercial properties, retail centers, municipalities, industrial facilities, and general contractors.</p>
+      <h2 class="display">Industries <span>We Serve</span></h2>
+      <p class="lead">Built for commercial properties, retail centers, municipalities, industrial facilities, and general contractors.</p>
     </div>
 
     <div class="services-grid">
@@ -207,8 +214,11 @@
       <p>The AI assistant is available around the clock, but the company still stays grounded in real people, real crews, and real workmanship.</p>
     </div>
     <div class="ai-badge">
-      <p style="font-size:1.1rem;line-height:1.7;margin-bottom:24px;">Speak with our A.I. team member anytime — ask about services, get a quick estimate, or find answers to your questions 24/7.</p>
-      <a href="https://a1-asphalt-voxtalk-3.onrender.com/" target="_blank" class="btn btn-primary">Speak With Our A.I. Team →</a>
+      <p style="font-size:1.1rem;line-height:1.7;margin-bottom:24px;">Have questions? Speak with our A.I. team member anytime — 24/7, instant answers about services, scheduling, and estimates.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Request a Free Estimate</a>
+        <a href="tel:16189293301" class="btn btn-phone">&#9990; (618) 929-3301</a>
+      </div>
     </div>
   </div>
 </section>
@@ -218,8 +228,8 @@
     <h2>Ready to Get Your<br>Estimate Started?</h2>
     <p>Call us or request a free estimate online — fast response, real answers.</p>
     <div class="hero-buttons">
-      <a href="tel:16189293301" class="btn btn-primary">(618) 929-3301</a>
-      <a href="tel:13149495660" class="btn btn-secondary">(314) 949-5660</a>
+      <a href="#contact" class="btn btn-primary">Request a Free Estimate</a>
+      <a href="tel:16189293301" class="btn btn-phone">&#9990; (618) 929-3301</a>
     </div>
   </div>
 </section>
@@ -245,7 +255,8 @@
 </section>
 
 <section class="slogan-band">
-  <blockquote>“If you don’t use A1 Asphalt, it’s your own <span>asphalt</span>”</blockquote>
+  <blockquote>“If you don’t <span>use</span> A1 Asphalt, it’s your <span>own</span> asphalt”</blockquote>
+  <p style="margin-top:16px;font-size:.82rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;">— Joe Schanz, Owner · A1 Professional Asphalt &amp; Sealing LLC</p>
 </section>
 
 <footer class="site-footer">
@@ -272,9 +283,9 @@ function openVox(){var o=document.getElementById('vox-overlay');o.style.display=
 function closeVox(){var o=document.getElementById('vox-overlay');o.style.display='none';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVox();});
 </script>
-<div id="vox-overlay">
-  <button id="vox-close-btn" onclick="closeVox()">&#10005;</button>
-  <iframe src="https://a1-asphalt-voxtalk-3.onrender.com/" title="A1 AI Team Member" allow="microphone"></iframe>
+<div id="vox-overlay" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);display:none;">
+  <button id="vox-close-btn" onclick="closeVox()" style="position:absolute;top:20px;right:28px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;z-index:10000;">&#10005;</button>
+  <iframe src="https://a1-asphalt-voxtalk-3.onrender.com/" title="A1 AI Team Member" allow="microphone" style="width:90%;max-width:500px;height:80vh;border:none;border-radius:8px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);"></iframe>
 </div>
 </body>
 </html>
