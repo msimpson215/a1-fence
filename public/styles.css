@@ -222,5 +222,6 @@ p, span, div, a, li, small { color: #ffffff !important; }
 .btn-phone { color: var(--yellow) !important; }
 .btn-primary { color: #0a0a0a !important; }
 .slogan-band span { color: var(--yellow) !important; }
+h2.display span { color: var(--yellow) !important; }
 .service-card:hover .service-arrow { color: #111 !important; }
 .wide-cta:hover { color: #111 !important; }
