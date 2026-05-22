@@ -52,7 +52,7 @@ h2.display span{color:var(--yellow)}
 .drop li a{display:block;height:auto;padding:12px 20px;font-size:.78rem;letter-spacing:.07em;color:#ffffff}
 .drop li a:hover{color:var(--yellow);background:rgba(245,197,24,.04)}
 .nav-actions{display:flex;align-items:center;gap:14px;margin-left:auto}
-.ai-nav{padding:11px 20px;border-radius:var(--radius);font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em;background:var(--yellow);color:#0a0a0a;border:none;text-decoration:none;transition:opacity .2s}
+.ai-nav{padding:10px 16px;border-radius:var(--radius);font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em;background:var(--yellow);color:#0a0a0a;border:none;text-decoration:none;transition:opacity .2s;white-space:nowrap}
 .ai-nav:hover{opacity:.88}
 .phone-nav{padding:11px 22px;border-radius:var(--radius);font-size:.82rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em;background:none;border:1px solid rgba(255,255,255,.3);color:#fff;text-decoration:none;transition:border-color .2s}
 .phone-nav:hover{border-color:var(--yellow)}
@@ -223,8 +223,8 @@ p, span, div, a, li, small { color: #ffffff !important; }
 .btn, button { color: inherit !important; }
 .btn-phone { color: var(--yellow) !important; }
 .btn-primary { color: #0a0a0a !important; }
-.btn-primary strong { color: #ffffff !important; }
-.slogan-band span { color: var(--yellow) !important; }
+.btn-primary strong { color: #0a0a0a !important; }
+.slogan-band span, .slogan-band blockquote span { color: var(--yellow) !important; }
 h2.display span { color: var(--yellow) !important; }
 .hero h1 span { color: var(--yellow) !important; }
 .cta-section h2 span { color: var(--yellow) !important; }
