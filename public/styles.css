@@ -82,9 +82,9 @@ h2.display span{color:var(--yellow)}
 .brand-strip{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0 24px;overflow:hidden}
 .brand-strip p{text-align:center;font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.22em;color:#ffffff;margin-bottom:16px}
 .ticker-wrap{overflow:hidden}
-.ticker-wrap{position:relative}
-.ticker-track{display:flex;align-items:center;gap:52px;animation:ticker 12s linear infinite;will-change:transform;width:max-content}
-.ticker-track img{height:36px;width:110px;object-fit:contain;opacity:.85;filter:grayscale(.2);flex-shrink:0}
+.ticker-wrap{overflow:hidden;position:relative}
+.ticker-track{display:flex;gap:0;animation:ticker 18s linear infinite;width:fit-content}
+.ticker-track img{height:36px;width:140px;padding:0 20px;object-fit:contain;opacity:.85;filter:grayscale(.2);flex-shrink:0}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* INTRO */
@@ -223,6 +223,7 @@ p, span, div, a, li, small { color: #ffffff !important; }
 .btn, button { color: inherit !important; }
 .btn-phone { color: var(--yellow) !important; }
 .btn-primary { color: #0a0a0a !important; }
+.ai-nav { color: #0a0a0a !important; }
 .btn-primary strong { color: #0a0a0a !important; }
 .slogan-band span, .slogan-band blockquote span { color: var(--yellow) !important; }
 h2.display span { color: var(--yellow) !important; }
