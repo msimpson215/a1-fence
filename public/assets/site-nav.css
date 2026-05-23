@@ -269,3 +269,27 @@ body.has-site-nav section.hero {
     width: 120px;
   }
 }
+
+/* Override legacy inline nav rules on inner pages */
+body.has-site-nav nav.desktop-nav {
+  position: static;
+  height: auto;
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+}
+
+body.has-site-nav header.site-header {
+  height: 80px !important;
+}
+
+body.has-site-nav .nav-brand {
+  width: 110px !important;
+}
+
+body.has-site-nav .nav-brand img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+}
