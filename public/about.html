@@ -5,27 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>About — A1 Professional Asphalt & Sealing LLC</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/site-nav.css" />
 <style>
 :root{--yellow:#F5C518;--black:#0A0A0A;--dark:#111111;--gray:#1E1E1E;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{background:var(--black);color:#fff;font-family:'Barlow',sans-serif;overflow-x:hidden;}
-nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(0,0,0,0.97);border-bottom:2px solid var(--yellow);padding:0 40px;display:flex;align-items:center;height:72px;gap:16px;}
-.logo img{height:60px;width:auto;display:block;}
-.nav-center{display:flex;align-items:center;}
-.nav-center a{color:#fff;text-decoration:none;font-size:0.82rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0 14px;transition:color 0.2s;display:flex;align-items:center;height:72px;}
-.nav-center a:hover{color:var(--yellow);}
-.has-drop{position:relative;}
-.has-drop>a::after{content:' ▾';}
-.drop{display:none;position:absolute;top:72px;left:0;background:#0d0d0d;border:1px solid rgba(245,197,24,0.2);border-top:2px solid var(--yellow);min-width:220px;list-style:none;padding:6px 0;z-index:1000;}
-.drop li a{display:block;padding:10px 20px;color:#fff;font-size:0.78rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;height:auto;}
-.drop li a:hover{color:var(--yellow);background:rgba(245,197,24,0.05);}
-.has-drop:hover .drop{display:block;}
-.nav-right{display:flex;align-items:center;gap:12px;margin-left:auto;}
-.btn-ai{background:var(--yellow);color:#0a0a0a;height:44px;padding:0 18px;border-radius:4px;font-weight:800;font-size:0.75rem;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;white-space:nowrap;}
-.btn-ai:hover{opacity:0.88;}
-.phone-link{color:#fff;font-size:0.82rem;font-weight:900;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:0 18px;height:44px;display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,0.3);border-radius:4px;transition:border-color 0.2s;}
-.phone-link:hover{border-color:var(--yellow);}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;}
 .hamburger span{display:block;width:24px;height:2px;background:#fff;}
 .mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:#000;border-top:1px solid rgba(245,197,24,0.3);z-index:998;padding:16px 0;}
@@ -34,7 +19,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(0,0,0,0.97);
 .mobile-menu a:hover{color:var(--yellow);}
 .mobile-menu .mobile-submenu a{font-size:0.78rem;color:#fff;padding:10px 32px;}
 /* HERO */
-.hero{position:relative;height:70vh;min-height:480px;display:flex;align-items:center;overflow:hidden;margin-top:72px;}
+.hero{position:relative;height:70vh;min-height:480px;display:flex;align-items:center;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;background:url('images/unitedstatesflag.jpg') center center/cover no-repeat;filter:brightness(0.45);}
 .hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.15);}
 .hero-stripe{position:absolute;bottom:0;left:0;right:0;height:6px;background:repeating-linear-gradient(90deg,var(--yellow) 0px,var(--yellow) 60px,transparent 60px,transparent 90px);}
@@ -90,12 +75,8 @@ footer{background:#050505;padding:64px 40px 32px;border-top:3px solid var(--yell
 .footer-bottom p{color:#fff;font-size:0.75rem;}
 @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:48px;}}
 @media(max-width:768px){
-  nav{padding:0 16px;}
-  .nav-center{display:none !important;}
-  .hamburger{display:flex;}
-  .btn-ai{display:none;}
-  .phone-link{color:#fff;font-size:0.82rem;font-weight:900;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:0 18px;height:44px;display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,0.3);border-radius:4px;transition:border-color 0.2s;}
-  .about-section{padding:64px 20px;}
+      .hamburger{display:flex;}
+      .about-section{padding:64px 20px;}
   .footer-grid{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr;}.stats-row{grid-template-columns:1fr;}}
@@ -106,11 +87,18 @@ footer{background:#050505;padding:64px 40px 32px;border-top:3px solid var(--yell
 #vox-close-btn{position:absolute;top:8px;right:12px;background:none;border:none;color:#fff;font-size:1.1rem;font-weight:900;cursor:pointer;z-index:10;}
 </style>
 </head>
-<body>
+<body class="has-site-nav">
 
-<nav>
-  <a href="index.html" class="logo"><img src="A1__asphalt_logo.jpeg" alt="A1 Professional Asphalt"/></a>
-  <div class="nav-center">
+<header class="site-header">
+  <a href="index.html" class="nav-brand" aria-label="A1 Professional Asphalt home">
+    <img src="A1__asphalt_logo.jpeg" alt="A1 Professional Asphalt &amp; Sealing LLC" />
+  </a>
+
+  <button class="hamburger" onclick="toggleMenu(event)" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="desktop-nav" aria-label="Main navigation">
     <div class="has-drop">
       <a href="index.html#services">Services</a>
       <ul class="drop">
@@ -126,12 +114,26 @@ footer{background:#050505;padding:64px 40px 32px;border-top:3px solid var(--yell
     </div>
     <a href="our-work.html">Our Work</a>
     <a href="about.html">About</a>
+  </nav>
+
+  <div class="nav-actions">
+    <a href="https://a1-asphalt-voxtalk-3.onrender.com/" target="_blank" class="ai-nav">Artificial Intelligence Team Member</a>
+    <a href="tel:13149495660" class="phone-nav">(314) 949-5660</a>
   </div>
-  <div class="nav-right">
-    <a href="https://a1-asphalt-voxtalk-3.onrender.com/" target="_blank" class="btn-ai" style="color:#0a0a0a !important;">Artificial Intelligence Team Member</a>
-    <a href="tel:13149495660" class="phone-link">(314) 949-5660</a>
-  </div>
-</nav>
+</header>
+<div class="nav-stripe" aria-hidden="true"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#services">Services</a>
+  <a href="sealcoating.html">Sealcoating</a>
+  <a href="crack-filling.html">Crack Filling</a>
+  <a href="parking-lot-striping.html">Parking Lot Striping</a>
+  <a href="asphalt-patching.html">Asphalt Patching</a>
+  <a href="our-work.html">Our Work</a>
+  <a href="about.html">About</a>
+  <a href="https://a1-asphalt-voxtalk-3.onrender.com/" target="_blank">Artificial Intelligence Team Member</a>
+  <a href="tel:13149495660">(314) 949-5660</a>
+</div>
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html#services">Services</a>
