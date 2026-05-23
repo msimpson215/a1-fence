@@ -9,6 +9,7 @@ app.get('/', (req, res) => {
 });
 
 const PORT = process.env.PORT || 10000;
-app.listen(PORT, () => {
-  console.log(`A1 Professional Asphalt site running on port ${PORT}`);
+const HOST = '0.0.0.0';
+app.listen(PORT, HOST, () => {
+  console.log(`A1 Professional Asphalt site running on http://${HOST}:${PORT}`);
 });
