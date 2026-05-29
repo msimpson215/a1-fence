@@ -9,7 +9,7 @@
 <style>
 :root{--yellow:#F5C518;--black:#0A0A0A;--dark:#111111;--muted:#ffffff;}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--black);color:#fff;font-family:'Barlow',sans-serif;}
+body{background:var(--black);color:#fff;font-family:'Barlow',sans-serif;overflow-x:hidden;}
 .wrap{padding:140px 40px 80px;max-width:900px;margin:0 auto;}
 .lbl{display:inline-flex;align-items:center;gap:10px;font-size:0.72rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--yellow);margin-bottom:20px;}
 .lbl::before{content:'';width:28px;height:2px;background:var(--yellow);}
@@ -23,6 +23,22 @@ h1 span{color:var(--yellow);}
 footer{background:#050505;border-top:3px solid var(--yellow);padding:32px 40px;margin-top:80px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
 footer p{color:#ffffff;font-size:0.78rem;}
 footer a{color:var(--yellow);text-decoration:none;}
+
+@media(max-width:768px){
+  .wrap{padding:40px 20px;}
+  .two-col{grid-template-columns:1fr;gap:32px;}
+  .hero-content{padding:0 20px;}
+  .footer-grid{grid-template-columns:1fr;}
+  .footer-address-row{grid-template-columns:1fr 1fr;}
+  .cta-strip{padding:40px 20px;}
+  .photo-grid{grid-template-columns:1fr 1fr;}
+  footer{padding:40px 20px 32px;}
+  .btns{flex-direction:column;align-items:center;}
+}
+@media(max-width:480px){
+  .footer-address-row{grid-template-columns:1fr;}
+  .photo-grid{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body class="has-site-nav">

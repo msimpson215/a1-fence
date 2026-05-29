@@ -9,7 +9,7 @@
 <style>
 :root{--yellow:#F5C518;--black:#0A0A0A;--dark:#111111;}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--black);color:#fff;font-family:'Barlow',sans-serif;}
+body{background:var(--black);color:#fff;font-family:'Barlow',sans-serif;overflow-x:hidden;}
 .hero{position:relative;height:420px;display:flex;align-items:center;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;background:url('images/concrete-2-400x284 (2).jpg') center/cover no-repeat;filter:brightness(0.85);}
 .hero-overlay{position:absolute;inset:0;background:none;}
@@ -67,6 +67,22 @@ footer{background:#050505;padding:64px 40px 32px;border-top:3px solid var(--yell
 .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid #ffffff;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
 .footer-bottom p{color:#ffffff;font-size:0.75rem;}
 .footer-seo{color:#ffffff;font-size:0.72rem;}
+
+@media(max-width:768px){
+  .wrap{padding:40px 20px;}
+  .two-col{grid-template-columns:1fr;gap:32px;}
+  .hero-content{padding:0 20px;}
+  .footer-grid{grid-template-columns:1fr;}
+  .footer-address-row{grid-template-columns:1fr 1fr;}
+  .cta-strip{padding:40px 20px;}
+  .photo-grid{grid-template-columns:1fr 1fr;}
+  footer{padding:40px 20px 32px;}
+  .btns{flex-direction:column;align-items:center;}
+}
+@media(max-width:480px){
+  .footer-address-row{grid-template-columns:1fr;}
+  .photo-grid{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body class="has-site-nav">
