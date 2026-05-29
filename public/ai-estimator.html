@@ -162,6 +162,8 @@
     }
 
     @media(max-width:768px){
+      div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;}
+      footer div[style*="grid-template-columns"]{grid-template-columns:1fr !important;}
                   .hamburger{display:flex;}
             .ai-row{grid-template-columns:1fr;gap:28px;}
       .section{padding:72px 20px;}
@@ -233,47 +235,60 @@
     <a href="tel:13149495660">&#128222; (314) 949-5660</a>
   </div>
 
-  <header class="hero">
-    <div class="container">
-      <h1>AI Asphalt <span>Estimator</span></h1>
-      <p>
-        </p><p style="font-size:1.2rem;font-weight:700;color:var(--yellow);margin-bottom:8px;">COMING SOON</p><p>
-        Get an estimate in 15 minutes — from your phone. Walk your parking lot, record it with your smartphone, and our A1 team member will analyze the footage to calculate your bid. No site visit needed.
-      </p>
-
-      <div class="hero-actions">
-        <a class="btn-primary" href="javascript:void(0)" onclick="openVox()">Coming Soon &#8594;</a>
-        <a class="btn-outline" href="tel:13149495660">Call Now</a>
+  <section style="background:var(--black);padding:80px 40px;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:48px;">
+      <div style="display:inline-flex;align-items:center;gap:10px;font-size:0.72rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--yellow);margin-bottom:16px;"><span style="width:28px;height:2px;background:var(--yellow);display:inline-block;"></span>AI Estimator</div>
+      <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,5rem);color:#fff;line-height:0.95;margin-bottom:16px;">Get Your Estimate in<br/><span style="color:var(--yellow);">15 Minutes</span></h1>
+      <p style="font-size:1.2rem;font-weight:700;color:var(--yellow);">COMING SOON</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+      <div>
+        <img src="images/AI example estiment.jpg" alt="AI Estimate Report Example" style="width:100%;border-radius:8px;border:2px solid var(--yellow);"/>
       </div>
-
-      <div class="ai-row">
-        <div class="panel">
-          <h2>How it <span>works</span></h2>
-          <ul>
-            <li>Walk your parking lot with your smartphone, recording the surface and any damage.</li>
-            <li>Our A1 team member analyzes the video — potholes, cracks, fading, and lot size calculated via satellite.</li>
-            <li>When you’re ready, we’ll walk you through the next steps to capture your lot and move toward an estimate.</li>
-          </ul>
-          <p class="muted" style="margin-top:14px;">
-            Prefer a human? Call us anytime and we’ll take care of you.
-          </p>
-        </div>
-
-        <div class="ai-orb-wrap">
-          <div class="ai-orb" onclick="openVox()" title="Click to talk with our AI"></div>
-          <div class="orb-label">Speak with our A1 team member</div>
-        <img src="images/AI example estiment.jpg" alt="AI Estimate Example" style="width:100%;max-width:400px;border-radius:8px;border:2px solid var(--yellow);margin-top:20px;"/>
-        </div>
+      <div>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#fff;margin-bottom:24px;">Here&rsquo;s How It <span style="color:var(--yellow);">Works</span></h2>
+        <ul style="list-style:none;margin:0;padding:0;">
+          <li style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.1);color:#fff;font-size:1rem;"><span style="color:var(--yellow);font-weight:900;flex-shrink:0;">1.</span>One of our team members calls you at your scheduled time.</li>
+          <li style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.1);color:#fff;font-size:1rem;"><span style="color:var(--yellow);font-weight:900;flex-shrink:0;">2.</span>Walk your parking lot with your smartphone camera on &mdash; our team member sees what you see in real time.</li>
+          <li style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.1);color:#fff;font-size:1rem;"><span style="color:var(--yellow);font-weight:900;flex-shrink:0;">3.</span>We analyze the video &mdash; potholes, cracks, fading &mdash; and calculate lot size via satellite.</li>
+          <li style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;color:#fff;font-size:1rem;"><span style="color:var(--yellow);font-weight:900;flex-shrink:0;">4.</span>You get a detailed estimate with photos and cost breakdown &mdash; in 15 minutes.</li>
+        </ul>
+        <p style="margin-top:24px;font-size:1.1rem;font-weight:800;color:var(--yellow);">5 minutes of your time. 5% off your first project.</p>
+        <p style="margin-top:16px;color:#fff;">Prefer to call? <a href="tel:13149495660" style="color:var(--yellow);text-decoration:none;">(314) 949-5660</a></p>
       </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <footer>
-    <div class="footer-bottom">
-      <p>&copy; 2025 A1 Professional Asphalt &amp; Sealing LLC &middot; All Rights Reserved</p>
-      <p class="footer-seo">Asphalt sealcoating St. Louis &middot; Parking lot striping Illinois &middot; Crack filling commercial &middot; Asphalt patching St. Louis</p>
+  <div style="padding:52px 20px;text-align:center;background:linear-gradient(rgba(0,0,0,.58),rgba(0,0,0,.68)),url('images/unitedstatesflag.jpg') center/cover no-repeat;border-bottom:3px solid #F5C518;">
+  <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,4rem);line-height:1.05;color:#fff;text-shadow:0 6px 20px rgba(0,0,0,.7);max-width:900px;margin:0 auto;">&ldquo;If you <span style="color:#F5C518;">don&rsquo;t</span> use A1 Asphalt,<br/>it&rsquo;s your own <span style="color:#F5C518;">asphalt</span>&rdquo;</div>
+  <p style="margin-top:16px;font-size:.82rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;">&mdash; Joe Schanz, Owner &middot; A1 Professional Asphalt &amp; Sealing LLC</p>
+</div>
+<footer style="background:#050505;padding:64px 40px 32px;border-top:3px solid var(--yellow);">
+  <div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1);">
+    <div>
+      <div><img src="A1__asphalt_logo.jpeg" alt="A1 Professional Asphalt" style="height:56px;width:auto;margin-bottom:16px;"/></div>
+      <p style="color:#fff;font-size:0.85rem;line-height:1.7;margin-bottom:20px;">Full-service asphalt and concrete company serving St. Louis and commercial clients nationwide.</p>
     </div>
-  </footer>
+    <div>
+      <div style="font-size:0.72rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--yellow);margin-bottom:20px;">Services</div>
+      <ul style="list-style:none;"><li style="margin-bottom:10px;"><a href="sealcoating.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Sealcoating</a></li><li style="margin-bottom:10px;"><a href="crack-filling.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Crack Filling</a></li><li style="margin-bottom:10px;"><a href="parking-lot-striping.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Lot Striping</a></li><li style="margin-bottom:10px;"><a href="asphalt-patching.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Asphalt Paving / Sealing</a></li><li style="margin-bottom:10px;"><a href="concrete-work.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Concrete Finishing</a></li><li style="margin-bottom:10px;"><a href="bollard-installation.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Bollards</a></li></ul>
+    </div>
+    <div>
+      <div style="font-size:0.72rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--yellow);margin-bottom:20px;">Markets</div>
+      <ul style="list-style:none;"><li style="margin-bottom:10px;"><a href="commercial.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Commercial</a></li><li style="margin-bottom:10px;"><a href="churches.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Churches</a></li><li style="margin-bottom:10px;"><a href="strip-malls.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Strip Malls</a></li><li style="margin-bottom:10px;"><a href="municipalities.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Municipalities</a></li><li style="margin-bottom:10px;"><a href="general-contractors.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">General Contractors</a></li><li style="margin-bottom:10px;"><a href="industrial.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Industrial</a></li></ul>
+    </div>
+    <div>
+      <div style="font-size:0.72rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--yellow);margin-bottom:20px;">Offices</div>
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;color:#fff;font-size:0.85rem;"><strong style="color:var(--yellow);font-size:0.72rem;text-transform:uppercase;">HQ</strong><span>Lebanon, IL 62254<br/>(314) 949-5660</span></div>
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;margin-top:12px;color:#fff;font-size:0.85rem;"><strong style="color:var(--yellow);font-size:0.72rem;text-transform:uppercase;">St. Louis</strong><span>Maryland Heights, MO<br/>(314) 949-5660</span></div>
+    </div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding-top:24px;text-align:center;">
+    <p style="color:#fff;font-size:0.75rem;">&copy; 2026 A1 Professional Asphalt &amp; Sealing LLC &middot; All Rights Reserved</p>
+  </div>
+</footer>
 
   <div id="vox-overlay">
     <button id="vox-close-btn" onclick="closeVox()">&#10005;</button>
