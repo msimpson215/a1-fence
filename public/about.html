@@ -23,7 +23,7 @@ body{background:var(--black);color:#fff;font-family:'Barlow',sans-serif;overflow
 .hero-bg{position:absolute;inset:0;background:url('images/St. Louis skyline with asphalt sealing truck (3).png') center center/cover no-repeat;filter:brightness(0.8);}
 .hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.15);}
 .hero-stripe{position:absolute;bottom:0;left:0;right:0;height:6px;background:repeating-linear-gradient(90deg,var(--yellow) 0px,var(--yellow) 60px,transparent 60px,transparent 90px);}
-.hero-content{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:0 60px;}
+.hero-content{position:relative;z-index:2;width:100%;max-width:min(1600px,92vw);margin:0 auto;padding:0 60px;}
 .hero-badge{display:inline-flex;align-items:center;gap:10px;color:#fff;font-size:0.78rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:16px;}
 .hero-badge::before{content:'';width:28px;height:2px;background:var(--yellow);}
 .hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,8vw,7rem);color:#fff;line-height:0.95;margin-bottom:16px;}
@@ -31,7 +31,7 @@ body{background:var(--black);color:#fff;font-family:'Barlow',sans-serif;overflow
 .hero-sub{font-size:1.1rem;color:#fff;font-weight:600;}
 /* ABOUT CONTENT */
 .about-section{background:var(--dark);padding:96px 40px;}
-.container{max-width:1200px;margin:0 auto;}
+.container{max-width:min(1600px,92vw);margin:0 auto;}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
 .section-label{font-size:0.72rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px;}
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);color:#fff;line-height:1;margin-bottom:32px;}
@@ -61,7 +61,7 @@ body{background:var(--black);color:#fff;font-family:'Barlow',sans-serif;overflow
 .tagline-attr{margin-top:16px;font-size:0.78rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#ffffff;}
 /* FOOTER */
 footer{background:#050505;padding:64px 40px 32px;border-top:3px solid var(--yellow);}
-.footer-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid #ffffff;}
+.footer-grid{max-width:min(1600px,92vw);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid #ffffff;}
 .footer-logo img{height:56px;width:auto;margin-bottom:16px;}
 .footer-about{color:#fff;font-size:0.85rem;line-height:1.7;margin-bottom:20px;}
 .footer-contact-item{display:flex;gap:10px;margin-bottom:8px;color:#fff;font-size:0.85rem;}
@@ -71,9 +71,9 @@ footer{background:#050505;padding:64px 40px 32px;border-top:3px solid var(--yell
 .footer-links li{margin-bottom:10px;}
 .footer-links a{color:#fff;text-decoration:none;font-size:0.85rem;transition:color 0.2s;}
 .footer-links a:hover{color:var(--yellow);}
-.footer-bottom{max-width:1200px;margin:32px auto 0;padding-top:24px;border-top:1px solid #ffffff;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-bottom{max-width:min(1600px,92vw);margin:32px auto 0;padding-top:24px;border-top:1px solid #ffffff;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
 .footer-bottom p{color:#fff;font-size:0.75rem;}
-@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:48px;}}
+@media(max-width:min(1600px,92vw)){.about-grid{grid-template-columns:1fr;gap:48px;}}
 @media(max-width:768px){
       .hamburger{display:flex;}
       .about-section{padding:64px 20px;}
@@ -199,7 +199,7 @@ footer{background:#050505;padding:64px 40px 32px;border-top:3px solid var(--yell
 </section>
 
 <div style="padding:52px 20px;text-align:center;background:linear-gradient(rgba(0,0,0,.58),rgba(0,0,0,.68)),url('images/unitedstatesflag.jpg') center/cover no-repeat;border-bottom:3px solid #F5C518;">
-  <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,4rem);line-height:1.05;color:#fff;text-shadow:0 6px 20px rgba(0,0,0,.7);max-width:900px;margin:0 auto;">&ldquo;If you <span style="color:#F5C518;">don&rsquo;t</span> use A1 Asphalt,<br/>it&rsquo;s your own <span style="color:#F5C518;">asphalt</span>&rdquo;</div>
+  <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,4rem);line-height:1.05;color:#fff;text-shadow:0 6px 20px rgba(0,0,0,.7);max-width:min(1600px,92vw);margin:0 auto;">&ldquo;If you <span style="color:#F5C518;">don&rsquo;t</span> use A1 Asphalt,<br/>it&rsquo;s your own <span style="color:#F5C518;">asphalt</span>&rdquo;</div>
   <p style="margin-top:16px;font-size:.82rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;">&mdash; Joe Schanz, Owner &middot; A1 Professional Asphalt &amp; Sealing LLC</p>
 </div>
   </div>
