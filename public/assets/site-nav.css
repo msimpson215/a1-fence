@@ -277,7 +277,16 @@ body.has-site-nav nav.desktop-nav {
   background: transparent;
   border: none;
   padding: 0;
-  display: flex;
+}
+
+@media (max-width: 980px) {
+  body.has-site-nav nav.desktop-nav,
+  body.has-site-nav .nav-actions {
+    display: none !important;
+  }
+  body.has-site-nav .hamburger {
+    display: block !important;
+  }
 }
 
 body.has-site-nav header.site-header {
