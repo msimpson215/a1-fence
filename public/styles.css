@@ -68,12 +68,12 @@ h2.display span{color:var(--yellow)}
 .hero-bg{position:absolute;inset:0;background:url('asphalt background.jpg') center/cover no-repeat;opacity:.28}
 .hero-flags{position:absolute;inset:0;background:url('images/unitedstatesflag.jpg') center/cover no-repeat;opacity:.30;filter:grayscale(.05)}
 .hero::after{content:'';position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(transparent,var(--black))}
-.hero-inner{position:relative;z-index:2;width:min(1100px,92vw);padding:60px 0 80px;display:flex;flex-direction:column;align-items:center}
+.hero-inner{position:relative;z-index:2;width:min(1400px,92vw);padding:60px 0 80px;display:flex;flex-direction:column;align-items:center}
 .hero-logo-wrap{width:min(960px,90vw);margin:0 auto 20px;filter:drop-shadow(0 8px 40px rgba(0,0,0,.85))}
 .hero-logo-wrap img{width:100%}
 .logo-stripe{width:100%;max-width:960px;height:4px;margin:0 auto 36px;background:repeating-linear-gradient(90deg,var(--yellow) 0,var(--yellow) 52px,transparent 52px,transparent 80px)}
 .hero-location{font-size:1.25rem;font-weight:900;text-transform:uppercase;letter-spacing:.28em;color:#ffffff;margin-bottom:14px}
-.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.2rem,7vw,6.5rem);letter-spacing:.04em;line-height:.95;color:#fff;text-shadow:0 10px 32px rgba(0,0,0,.7);margin-bottom:20px}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.2rem,7vw,8rem);letter-spacing:.04em;line-height:.95;color:#fff;text-shadow:0 10px 32px rgba(0,0,0,.7);margin-bottom:20px}
 .hero h1 span{color:var(--yellow)}
 .hero-sub{font-size:clamp(1rem,1.8vw,1.2rem);color:var(--muted);font-weight:600;max-width:540px;line-height:1.6;margin-bottom:36px}
 .hero-buttons{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
