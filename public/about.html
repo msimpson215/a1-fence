@@ -246,5 +246,11 @@ addEventListener('click',function(e){
   if(m&&m.classList.contains('open')&&!m.contains(e.target)&&!e.target.closest('.hamburger'))m.classList.remove('open');
 });
 </script>
+<style id="footer-mobile-fix">
+@media(max-width:768px){
+  footer>div:first-child{grid-template-columns:1fr !important;gap:32px !important;}
+  footer{padding:40px 20px 24px !important;}
+}
+</style>
 </body>
 </html>

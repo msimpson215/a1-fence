@@ -168,5 +168,11 @@ document.addEventListener('click', function(e){
 function openVox(){var o=document.getElementById('vox-overlay');o.classList.add('open');o.style.display='flex';}
 function closeVox(){var o=document.getElementById('vox-overlay');o.style.display='none';o.classList.remove('open');}
 </script>
+<style id="footer-mobile-fix">
+@media(max-width:768px){
+  footer>div:first-child{grid-template-columns:1fr !important;gap:32px !important;}
+  footer{padding:40px 20px 24px !important;}
+}
+</style>
 </body>
 </html>
