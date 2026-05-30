@@ -225,6 +225,13 @@ h2.display span{color:var(--yellow)}
   body{font-size:18px}
   .container{width:min(1800px,90vw)}
 }
+@media(min-width:2400px){
+  .hero-logo-wrap{width:min(1300px,85vw)}
+  .logo-stripe{max-width:1300px}
+  .hero-location{font-size:1.8rem}
+  .hero h1{font-size:11rem}
+  .hero-inner{max-width:2000px}
+}
 * { color: inherit; }
 p, span, div, a, li, small { color: #ffffff !important; }
 .btn, button { color: inherit !important; }
