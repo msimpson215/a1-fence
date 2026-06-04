@@ -7,7 +7,7 @@ Clone of the A1 asphalt site structure, rebranded for fencing services (wood, vi
 - `server/server.js` — web server
 - `package.json` — dependencies
 - `public/index.html` — homepage
-- `public/A1_fence_logo.png` — logo (replace with your final artwork)
+- `public/A1_fence_logo.png` — official branding (A1FencePro.com · 888-223-3797)
 - `public/images/fences/` — fence category photos (Unsplash stock; swap for your project photos)
 
 ## Service pages (same URLs as asphalt template)
