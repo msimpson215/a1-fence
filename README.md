@@ -25,9 +25,31 @@ Clone of the A1 asphalt site structure, rebranded for fencing services (wood, vi
 | `concrete-work.html` | Commercial |
 | `bollard-installation.html` | Chain link |
 
-## Deploy
+## Deploy on Render (Node)
 
-Same flow as the asphalt site: push to GitHub, connect Render, `npm install`, start command `node server/server.js` (or root `server.js` per your Render config).
+1. Push this repo to GitHub (`msimpson215/a1-fence`).
+2. [render.com](https://render.com) → **New** → **Web Service** → connect the repo.
+3. Use these settings:
+
+| Setting | Value |
+|--------|--------|
+| **Environment** | Node |
+| **Branch** | `main` (or `cursor/a1-fence-rebrand-0567` until merged) |
+| **Root Directory** | *(leave blank)* |
+| **Build Command** | `npm install` |
+| **Start Command** | `npm start` |
+
+**Environment variables** — none required. Render sets `PORT` automatically; the app already uses `process.env.PORT`.
+
+Optional:
+
+| Key | Value |
+|-----|--------|
+| `NODE_VERSION` | `20` |
+
+4. **Create Web Service** → Render gives you a URL like `https://a1-fence.onrender.com`.
+
+After deploy, open `/index.html` or `/` for the homepage.
 
 ## Rebrand scripts
 

@@ -10,5 +10,5 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
-  console.log(`A1 Professional Asphalt site running on port ${PORT}`);
+  console.log(`A1 Professional Fence site running on port ${PORT}`);
 });
