@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / "public"
 
 REPLACEMENTS = [
-    ("A1_fence_logo.svg", "A1_fence_logo.png"),
+    ("A1_fence_logo.svg", "A1_fence_logo.jpg"),
     ("tel:13149495660", "tel:18882233797"),
     ("sms:13149495660", "sms:18882233797"),
     ("(314) 949-5660", "(888) 223-3797"),

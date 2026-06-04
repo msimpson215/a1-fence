@@ -9,7 +9,7 @@ SKIP = {"index.html", "a1_hero_preview.html"}
 
 HEADER = """<header class="site-header">
   <a href="index.html" class="nav-brand" aria-label="A1 Professional Fence home">
-    <img src="A1_fence_logo.png" alt="A1 Professional Fence LLC" />
+    <img src="A1_fence_logo_nav.jpg" alt="A1 Professional Fence LLC" />
   </a>
 
   <button class="hamburger" onclick="toggleMenu(event)" aria-label="Open menu">
