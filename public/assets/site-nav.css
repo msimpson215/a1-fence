@@ -34,14 +34,17 @@
 }
 
 .nav-brand {
-  width: 110px;
+  width: auto;
+  max-width: 220px;
   flex-shrink: 0;
 }
 
 .nav-brand img {
-  width: 100%;
+  width: auto;
+  max-height: 56px;
   height: auto;
   display: block;
+  border-radius: 4px;
 }
 
 .desktop-nav {

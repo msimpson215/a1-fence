@@ -9,7 +9,7 @@ SKIP = {"index.html", "a1_hero_preview.html"}
 
 HEADER = """<header class="site-header">
   <a href="index.html" class="nav-brand" aria-label="A1 Professional Fence home">
-    <img src="A1_fence_logo.svg" alt="A1 Professional Fence LLC" />
+    <img src="A1_fence_logo.png" alt="A1 Professional Fence LLC" />
   </a>
 
   <button class="hamburger" onclick="toggleMenu(event)" aria-label="Open menu">
@@ -35,7 +35,7 @@ HEADER = """<header class="site-header">
 
   <div class="nav-actions">
     <a href="https://a1-asphalt-voxtalk-3.onrender.com/" target="_blank" class="ai-nav">Artificial Intelligence Team Member</a>
-    <a href="tel:13149495660" class="phone-nav">(314) 949-5660</a>
+    <a href="tel:18882233797" class="phone-nav">(888) 223-3797</a>
   </div>
 </header>
 <div class="nav-stripe" aria-hidden="true"></div>
@@ -51,7 +51,7 @@ HEADER = """<header class="site-header">
   <a href="our-work.html">Our Work</a>
   <a href="about.html">About</a>
   <a href="https://a1-asphalt-voxtalk-3.onrender.com/" target="_blank">Artificial Intelligence Team Member</a>
-  <a href="tel:13149495660">(314) 949-5660</a>
+  <a href="tel:18882233797">(888) 223-3797</a>
 </div>
 """
 

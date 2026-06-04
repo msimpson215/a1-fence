@@ -41,7 +41,8 @@ h2.display span{color:var(--yellow)}
 /* NAV */
 .site-header{position:sticky;top:0;z-index:1000;height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(4,4,4,.96);backdrop-filter:blur(14px);border-bottom:none}
 .nav-stripe{width:100%;height:6px;background:repeating-linear-gradient(90deg,var(--yellow) 0,var(--yellow) 52px,transparent 52px,transparent 80px);position:sticky;top:80px;z-index:999}
-.nav-brand{width:110px;flex-shrink:0}
+.nav-brand{width:auto;max-width:220px;flex-shrink:0}
+.nav-brand img{max-height:56px;width:auto;border-radius:4px}
 .desktop-nav{display:flex;align-items:center;gap:6px;margin-left:28px}
 .desktop-nav a{font-size:.82rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:#ffffff;padding:0 14px;height:80px;display:inline-flex;align-items:center;transition:color .18s}
 .desktop-nav a:hover{color:var(--yellow)}
@@ -139,13 +140,13 @@ h2.display span{color:var(--yellow)}
 .play-btn:hover{transform:scale(1.08)}
 .video-box p{color:var(--muted);font-size:.88rem}
 .ai-orb-wrap{display:flex;flex-direction:column;align-items:center;gap:20px;justify-content:center}
-.ai-orb{width:200px;height:200px;border-radius:50%;background:url('A1_fence_logo.svg') center center/contain no-repeat;background-color:#F5C518;box-shadow:0 0 60px rgba(245,197,24,0.4),0 0 120px rgba(245,197,24,0.15);animation:pulse 3s ease-in-out infinite;cursor:pointer}
+.ai-orb{width:200px;height:200px;border-radius:50%;background:url('A1_fence_logo.png') center center/contain no-repeat;background-color:#F5C518;box-shadow:0 0 60px rgba(245,197,24,0.4),0 0 120px rgba(245,197,24,0.15);animation:pulse 3s ease-in-out infinite;cursor:pointer}
 @keyframes pulse{0%,100%{transform:scale(1);box-shadow:0 0 60px rgba(245,197,24,0.4),0 0 120px rgba(245,197,24,0.15);}50%{transform:scale(1.06);box-shadow:0 0 80px rgba(245,197,24,0.6),0 0 160px rgba(245,197,24,0.25);}}
 .orb-label{font-size:0.85rem;color:#ffffff;text-align:center;letter-spacing:0.08em;text-transform:uppercase;font-weight:700}
 #vox-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;justify-content:center;align-items:center;flex-direction:column}
 #vox-overlay.open{display:flex;animation:voxIn 0.4s ease forwards}
 @keyframes voxIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
-#vox-overlay .vox-orb{width:260px;height:260px;border-radius:50%;background:url('A1_fence_logo.svg') center/70% no-repeat;background-color:#111;border:3px solid var(--yellow);box-shadow:0 0 60px rgba(245,197,24,0.4),0 0 120px rgba(245,197,24,0.15),0 0 200px rgba(245,197,24,0.08);animation:orbPulse 3s ease-in-out infinite;cursor:pointer;margin-bottom:24px}
+#vox-overlay .vox-orb{width:260px;height:260px;border-radius:50%;background:url('A1_fence_logo.png') center/70% no-repeat;background-color:#111;border:3px solid var(--yellow);box-shadow:0 0 60px rgba(245,197,24,0.4),0 0 120px rgba(245,197,24,0.15),0 0 200px rgba(245,197,24,0.08);animation:orbPulse 3s ease-in-out infinite;cursor:pointer;margin-bottom:24px}
 @keyframes orbPulse{0%,100%{transform:scale(1);box-shadow:0 0 60px rgba(245,197,24,0.4),0 0 120px rgba(245,197,24,0.15),0 0 200px rgba(245,197,24,0.08);border-color:var(--yellow);}50%{transform:scale(1.05);box-shadow:0 0 80px rgba(245,197,24,0.6),0 0 160px rgba(245,197,24,0.25),0 0 260px rgba(245,197,24,0.12);border-color:#fff;}}
 #vox-overlay .vox-text{color:var(--yellow);font-size:1.2rem;font-weight:800;text-align:center;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer}
 #vox-overlay .vox-hint{color:rgba(255,255,255,0.4);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.14em;margin-top:20px}
