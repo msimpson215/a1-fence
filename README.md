@@ -2,6 +2,8 @@
 
 Clone of the A1 asphalt site structure, rebranded for fencing services (wood, vinyl, picket, wrought iron, chain link, commercial).
 
+**Mock-up for Joe:** fence branding and photos; **phone numbers unchanged** from the asphalt site (314 / 618 offices). Logo artwork may still show 888 on the graphic — CTAs use the real lines.
+
 ## Key files
 
 - `server/server.js` — web server
