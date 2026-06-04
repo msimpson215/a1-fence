@@ -65,7 +65,7 @@ h2.display span{color:var(--yellow)}
 
 /* HERO */
 .hero{position:relative;min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:var(--black)}
-.hero-bg{position:absolute;inset:0;background:url('asphalt background.jpg') center/cover no-repeat;opacity:.28}
+.hero-bg{position:absolute;inset:0;background:url('images/fences/fence-hero.jpg') center/cover no-repeat;opacity:.28}
 .hero-flags{position:absolute;inset:0;background:url('images/unitedstatesflag.jpg') center/cover no-repeat;opacity:.30;filter:grayscale(.05)}
 .hero::after{content:'';position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(transparent,var(--black))}
 .hero-inner{position:relative;z-index:2;width:92vw;max-width:1800px;padding:60px 0 80px;display:flex;flex-direction:column;align-items:center}
@@ -115,7 +115,7 @@ h2.display span{color:var(--yellow)}
 .stat-card span{display:block;margin-top:8px;color:#ffffff;font-size:.7rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
 
 /* REVIEWS */
-.reviews-section{padding:96px 0;background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.88)),url('images/striping%20parking%20lot.png') center/cover no-repeat}
+.reviews-section{padding:96px 0;background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.88)),url('images/fences/commercial-fence.jpg') center/cover no-repeat}
 .reviews-header{margin-bottom:40px}
 .reviews-header h2{font-family:'Bebas Neue',sans-serif;font-size:4rem;color:#fff}
 .reviews-header .score-sub{color:var(--muted);font-size:.78rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;margin-top:4px}
@@ -139,13 +139,13 @@ h2.display span{color:var(--yellow)}
 .play-btn:hover{transform:scale(1.08)}
 .video-box p{color:var(--muted);font-size:.88rem}
 .ai-orb-wrap{display:flex;flex-direction:column;align-items:center;gap:20px;justify-content:center}
-.ai-orb{width:200px;height:200px;border-radius:50%;background:url('A1__asphalt_logo.jpeg') center center/contain no-repeat;background-color:#F5C518;box-shadow:0 0 60px rgba(245,197,24,0.4),0 0 120px rgba(245,197,24,0.15);animation:pulse 3s ease-in-out infinite;cursor:pointer}
+.ai-orb{width:200px;height:200px;border-radius:50%;background:url('A1_fence_logo.svg') center center/contain no-repeat;background-color:#F5C518;box-shadow:0 0 60px rgba(245,197,24,0.4),0 0 120px rgba(245,197,24,0.15);animation:pulse 3s ease-in-out infinite;cursor:pointer}
 @keyframes pulse{0%,100%{transform:scale(1);box-shadow:0 0 60px rgba(245,197,24,0.4),0 0 120px rgba(245,197,24,0.15);}50%{transform:scale(1.06);box-shadow:0 0 80px rgba(245,197,24,0.6),0 0 160px rgba(245,197,24,0.25);}}
 .orb-label{font-size:0.85rem;color:#ffffff;text-align:center;letter-spacing:0.08em;text-transform:uppercase;font-weight:700}
 #vox-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;justify-content:center;align-items:center;flex-direction:column}
 #vox-overlay.open{display:flex;animation:voxIn 0.4s ease forwards}
 @keyframes voxIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
-#vox-overlay .vox-orb{width:260px;height:260px;border-radius:50%;background:url('A1__asphalt_logo.jpeg') center/70% no-repeat;background-color:#111;border:3px solid var(--yellow);box-shadow:0 0 60px rgba(245,197,24,0.4),0 0 120px rgba(245,197,24,0.15),0 0 200px rgba(245,197,24,0.08);animation:orbPulse 3s ease-in-out infinite;cursor:pointer;margin-bottom:24px}
+#vox-overlay .vox-orb{width:260px;height:260px;border-radius:50%;background:url('A1_fence_logo.svg') center/70% no-repeat;background-color:#111;border:3px solid var(--yellow);box-shadow:0 0 60px rgba(245,197,24,0.4),0 0 120px rgba(245,197,24,0.15),0 0 200px rgba(245,197,24,0.08);animation:orbPulse 3s ease-in-out infinite;cursor:pointer;margin-bottom:24px}
 @keyframes orbPulse{0%,100%{transform:scale(1);box-shadow:0 0 60px rgba(245,197,24,0.4),0 0 120px rgba(245,197,24,0.15),0 0 200px rgba(245,197,24,0.08);border-color:var(--yellow);}50%{transform:scale(1.05);box-shadow:0 0 80px rgba(245,197,24,0.6),0 0 160px rgba(245,197,24,0.25),0 0 260px rgba(245,197,24,0.12);border-color:#fff;}}
 #vox-overlay .vox-text{color:var(--yellow);font-size:1.2rem;font-weight:800;text-align:center;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer}
 #vox-overlay .vox-hint{color:rgba(255,255,255,0.4);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.14em;margin-top:20px}
@@ -153,7 +153,7 @@ h2.display span{color:var(--yellow)}
 #vox-close-btn{position:absolute;top:20px;right:28px;background:none;border:none;color:#fff;font-size:2rem;font-weight:900;cursor:pointer;z-index:10000;line-height:1}
 
 /* CTA */
-.cta-section{padding:96px 0;background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.72)),url('images/asphalt-road.jpg') center/cover no-repeat;border-top:2px solid var(--yellow);border-bottom:2px solid var(--yellow);text-align:center}
+.cta-section{padding:96px 0;background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.72)),url('images/images/fences/fence-hero.jpg') center/cover no-repeat;border-top:2px solid var(--yellow);border-bottom:2px solid var(--yellow);text-align:center}
 .cta-section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.6rem,5vw,4.4rem);letter-spacing:.04em;margin-bottom:14px}
 .cta-section p{color:var(--muted);font-size:1.08rem;font-weight:700;margin-bottom:36px;text-shadow:0 2px 8px rgba(0,0,0,.6)}
 

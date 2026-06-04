@@ -1,7 +1,7 @@
 {
-  "name": "a1-professional-asphalt",
+  "name": "a1-professional-fence",
   "version": "1.0.0",
-  "description": "A1 Professional Asphalt & Sealing LLC - Website",
+  "description": "A1 Professional Fence LLC - Website",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"

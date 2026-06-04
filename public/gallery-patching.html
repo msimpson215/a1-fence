@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Patching — A1 Professional Asphalt & Sealing LLC</title>
+<title>Chain Link Gallery — A1 Professional Fence LLC</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
 :root{--yellow:#F5C518;--black:#0A0A0A;--dark:#111111;--gray:#1E1E1E;}
@@ -11,7 +11,7 @@
 body{background:var(--black);color:#fff;font-family:'Barlow',sans-serif;overflow-x:hidden;}
 .has-drop:hover .call{background:none;border:2px solid var(--yellow);color:#fff;height:44px;padding:0 20px;border-radius:4px;font-weight:800;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;white-space:nowrap;}
 .hero{position:relative;display:flex;align-items:center;padding:40px 0;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background:url('images/1080x360.jpg') center center/cover no-repeat;filter:brightness(0.55);}
+.hero-bg{position:absolute;inset:0;background:url('images/fences/chain-link-fence.jpg') center center/cover no-repeat;filter:brightness(0.55);}
 .hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.2);}
 .hero-stripe{position:absolute;bottom:0;left:0;right:0;height:6px;background:repeating-linear-gradient(90deg,var(--yellow) 0px,var(--yellow) 60px,transparent 60px,transparent 90px);}
 .hero-content{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:0 40px;}
@@ -72,8 +72,8 @@ footer{background:#050505;padding:64px 40px 32px;border-top:3px solid var(--yell
 </head>
 <body>
 <header class="site-header">
-  <a href="index.html" class="nav-brand" aria-label="A1 Professional Asphalt home">
-    <img src="A1__asphalt_logo.jpeg" alt="A1 Professional Asphalt &amp; Sealing LLC" />
+  <a href="index.html" class="nav-brand" aria-label="A1 Professional Fence home">
+    <img src="A1_fence_logo.svg" alt="A1 Professional Fence LLC" />
   </a>
   <button class="hamburger" onclick="toggleMenu(event)" aria-label="Open menu">
     <span></span><span></span><span></span>
@@ -83,12 +83,12 @@ footer{background:#050505;padding:64px 40px 32px;border-top:3px solid var(--yell
       <a href="#services">Services</a>
       <ul class="drop">
         <li><a href="ai-estimator.html">AI Estimator</a></li>
-        <li><a href="sealcoating.html">Sealcoating</a></li>
-        <li><a href="crack-filling.html">Crack Filling</a></li>
-        <li><a href="parking-lot-striping.html">Parking Lot Striping</a></li>
-        <li><a href="asphalt-patching.html">Asphalt Paving / Sealing</a></li>
-        <li><a href="concrete-work.html">Concrete Finishing</a></li>
-        <li><a href="bollard-installation.html">Bollards / Signage</a></li>
+        <li><a href="sealcoating.html">Wood Fencing</a></li>
+        <li><a href="crack-filling.html">Vinyl Fencing</a></li>
+        <li><a href="parking-lot-striping.html">Picket Fencing</a></li>
+        <li><a href="asphalt-patching.html">Wrought Iron</a></li>
+        <li><a href="concrete-work.html">Commercial Fencing</a></li>
+        <li><a href="bollard-installation.html">Chain Link</a></li>
       </ul>
     </div>
     <a href="our-work.html">Our Work</a>
@@ -102,14 +102,15 @@ footer{background:#050505;padding:64px 40px 32px;border-top:3px solid var(--yell
 </header>
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html#services">Services</a>
-  <a href="sealcoating.html">Sealcoating</a>
-  <a href="crack-filling.html">Crack Filling</a>
-  <a href="parking-lot-striping.html">Parking Lot Striping</a>
-  <a href="asphalt-patching.html">Asphalt Paving / Sealing</a>
-  <a href="concrete-work.html">Concrete Finishing</a>
-  <a href="bollard-installation.html">Bollards / Signage</a>
+  <a href="sealcoating.html">Wood Fencing</a>
+  <a href="crack-filling.html">Vinyl Fencing</a>
+  <a href="parking-lot-striping.html">Picket Fencing</a>
+  <a href="asphalt-patching.html">Wrought Iron</a>
+  <a href="concrete-work.html">Commercial Fencing</a>
+  <a href="bollard-installation.html">Chain Link</a>
   <a href="our-work.html">Our Work</a>
   <a href="about.html">About</a>
+  <a href="javascript:void(0)" onclick="openVox()">Artificial Intelligence Team Member</a>
   <a href="tel:13149495660">(314) 949-5660</a>
 </div>
 <div class="nav-stripe" aria-hidden="true"></div>
@@ -120,21 +121,20 @@ footer{background:#050505;padding:64px 40px 32px;border-top:3px solid var(--yell
   <div class="hero-overlay"></div>
   <div class="hero-stripe"></div>
   <div class="hero-content">
-    <div class="hero-badge">A1 Professional Asphalt &amp; Sealing — Our Work</div>
-    <h1><span>Patching</span></h1>
+    <div class="hero-badge">A1 Professional Fence — Our Work</div>
+    <h1><span>Chain Link</span></h1>
   </div>
 </section>
 
 <section class="gallery-section">
   <div class="container">
     <div class="tabs">
-      <a href="our-work.html" class="tab-btn ">Our Work</a>
-      <a href="gallery-sealcoating.html" class="tab-btn ">Sealcoating</a>
-      <a href="gallery-striping.html" class="tab-btn ">Striping</a>
-      <a href="gallery-concrete.html" class="tab-btn ">Concrete</a>
-      <a href="gallery-crackfill.html" class="tab-btn ">Crack Filling</a>
-      <a href="gallery-patching.html" class="tab-btn active">Patching</a>
-      <a href="gallery-paving.html" class="tab-btn ">Paving</a>
+      <a href="gallery-sealcoating.html" class="tab-btn ">Wood</a>
+      <a href="gallery-crackfill.html" class="tab-btn ">Vinyl</a>
+      <a href="gallery-striping.html" class="tab-btn ">Picket</a>
+      <a href="gallery-paving.html" class="tab-btn ">Wrought Iron</a>
+      <a href="gallery-concrete.html" class="tab-btn ">Commercial</a>
+      <a href="gallery-patching.html" class="tab-btn ">Chain Link</a>
     </div>
     <div class="photo-grid" id="photo-grid"></div>
     <div class="pagination" id="pagination"></div>
@@ -142,8 +142,8 @@ footer{background:#050505;padding:64px 40px 32px;border-top:3px solid var(--yell
 </section>
 
 <div style="padding:52px 20px;text-align:center;background:linear-gradient(rgba(0,0,0,.58),rgba(0,0,0,.68)),url('images/unitedstatesflag.jpg') center/cover no-repeat;border-bottom:3px solid #F5C518;">
-  <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,4rem);line-height:1.05;color:#fff;text-shadow:0 6px 20px rgba(0,0,0,.7);max-width:900px;margin:0 auto;">&ldquo;If you <span style="color:#F5C518;">don&rsquo;t</span> use A1 Asphalt,<br/>it&rsquo;s your own <span style="color:#F5C518;">asphalt</span>&rdquo;</div>
-  <p style="margin-top:16px;font-size:.82rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;">&mdash; Joe Schanz, Owner &middot; A1 Professional Asphalt &amp; Sealing LLC</p>
+  <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,4rem);line-height:1.05;color:#fff;text-shadow:0 6px 20px rgba(0,0,0,.7);max-width:900px;margin:0 auto;">&ldquo;If you <span style="color:#F5C518;">don&rsquo;t</span> use A1 Fence,<br/>it&rsquo;s your own <span style="color:#F5C518;">fence line</span>&rdquo;</div>
+  <p style="margin-top:16px;font-size:.82rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;">&mdash; Joe Schanz, Owner &middot; A1 Professional Fence LLC</p>
 </div>
   </div>
 </div>
@@ -151,14 +151,14 @@ footer{background:#050505;padding:64px 40px 32px;border-top:3px solid var(--yell
 <footer style="background:#050505;padding:64px 40px 32px;border-top:3px solid #F5C518;">
   <div style="max-width:min(1600px,92vw);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1);">
     <div>
-      <div><img src="A1__asphalt_logo.jpeg" alt="A1 Professional Asphalt" style="height:56px;width:auto;margin-bottom:16px;"/></div>
-      <p style="color:#fff;font-size:0.85rem;line-height:1.7;margin-bottom:20px;">Full-service asphalt and concrete company serving St. Louis and commercial clients nationwide.</p>
+      <div><img src="A1_fence_logo.svg" alt="A1 Professional Fence" style="height:56px;width:auto;margin-bottom:16px;"/></div>
+      <p style="color:#fff;font-size:0.85rem;line-height:1.7;margin-bottom:20px;">Full-service commercial and residential fencing company serving St. Louis and commercial clients nationwide.</p>
       <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;color:#fff;font-size:0.85rem;"><strong style="color:#F5C518;min-width:80px;font-size:0.72rem;text-transform:uppercase;">Local</strong><span>(618) 929-3301</span></div>
       <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;color:#fff;font-size:0.85rem;"><strong style="color:#F5C518;min-width:80px;font-size:0.72rem;text-transform:uppercase;">Office</strong><span>(314) 949-5660</span></div>
     </div>
     <div>
       <div style="font-size:0.72rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#F5C518;margin-bottom:20px;">Services</div>
-      <ul style="list-style:none;"><li style="margin-bottom:10px;"><a href="sealcoating.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Sealcoating</a></li><li style="margin-bottom:10px;"><a href="crack-filling.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Crack Filling</a></li><li style="margin-bottom:10px;"><a href="parking-lot-striping.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Lot Striping</a></li><li style="margin-bottom:10px;"><a href="asphalt-patching.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Asphalt Paving / Sealing</a></li><li style="margin-bottom:10px;"><a href="concrete-work.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Concrete Finishing</a></li><li style="margin-bottom:10px;"><a href="bollard-installation.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Bollards</a></li></ul>
+      <ul style="list-style:none;"><li style="margin-bottom:10px;"><a href="sealcoating.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Wood Fencing</a></li><li style="margin-bottom:10px;"><a href="crack-filling.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Vinyl Fencing</a></li><li style="margin-bottom:10px;"><a href="parking-lot-striping.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Picket Fencing</a></li><li style="margin-bottom:10px;"><a href="asphalt-patching.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Wrought Iron</a></li><li style="margin-bottom:10px;"><a href="concrete-work.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Commercial Fencing</a></li><li style="margin-bottom:10px;"><a href="bollard-installation.html" style="color:#fff;text-decoration:none;font-size:0.85rem;">Chain Link</a></li></ul>
     </div>
     <div>
       <div style="font-size:0.72rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#F5C518;margin-bottom:20px;">Markets</div>
@@ -172,7 +172,7 @@ footer{background:#050505;padding:64px 40px 32px;border-top:3px solid var(--yell
     </div>
   </div>
   <div style="max-width:min(1600px,92vw);margin:0 auto;padding-top:24px;text-align:center;">
-    <p style="color:#fff;font-size:0.75rem;">&copy; 2026 A1 Professional Asphalt &amp; Sealing LLC &middot; All Rights Reserved</p>
+    <p style="color:#fff;font-size:0.75rem;">&copy; 2026 A1 Professional Fence LLC &middot; All Rights Reserved</p>
   </div>
 </footer>
 
@@ -197,7 +197,7 @@ function buildGrid(page) {
   const grid = document.getElementById('photo-grid');
   grid.innerHTML = slice.map(f => `
     <div class="photo-item" onclick="openLightbox('images/${f}')">
-      <img src="images/${f}" alt="A1 Asphalt Work" loading="lazy" onerror="this.parentElement.style.display='none'"/>
+      <img src="images/${f}" alt="A1 Chain Link Work" loading="lazy" onerror="this.parentElement.style.display='none'"/>
     </div>`).join('');
   const total = Math.ceil(photos.length/PER_PAGE);
   const pag = document.getElementById('pagination');

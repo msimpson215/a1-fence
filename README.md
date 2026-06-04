@@ -1,26 +1,31 @@
-# A1 Professional Asphalt & Sealing — Website
+# A1 Professional Fence — Website
 
-## Files in this project:
-- `server.js` — runs the web server
-- `package.json` — tells Render what to install
-- `public/index.html` — the actual website
-- `public/Sams-Club-Parking-Lot-Painting-980x429.jpg` — hero image
-- `public/A1_logo.webp` — ADD YOUR LOGO FILE HERE
+Clone of the A1 asphalt site structure, rebranded for fencing services (wood, vinyl, picket, wrought iron, chain link, commercial).
 
-## How to deploy on Render (free):
+## Key files
 
-1. Go to github.com — create a free account if needed
-2. Click **New Repository** — name it `a1-website` — click **Create**
-3. Upload ALL files in this folder to the repo (drag and drop)
-4. Go to render.com — create a free account
-5. Click **New** → **Web Service**
-6. Connect your GitHub account → select `a1-website`
-7. Settings:
-   - **Build Command:** `npm install`
-   - **Start Command:** `node server.js`
-8. Click **Deploy** — done in 2 minutes
-9. Render gives you a live URL like `a1-website.onrender.com`
+- `server/server.js` — web server
+- `package.json` — dependencies
+- `public/index.html` — homepage
+- `public/A1_fence_logo.svg` — logo (replace with your final artwork)
+- `public/images/fences/` — fence category photos (Unsplash stock; swap for your project photos)
 
-## To make changes later:
-Tell Claude what to change → get updated index.html → 
-upload to GitHub → Render auto-republishes
+## Service pages (same URLs as asphalt template)
+
+| Page | Fence type |
+|------|------------|
+| `sealcoating.html` | Wood |
+| `crack-filling.html` | Vinyl |
+| `parking-lot-striping.html` | Picket |
+| `asphalt-patching.html` | Wrought iron |
+| `concrete-work.html` | Commercial |
+| `bollard-installation.html` | Chain link |
+
+## Deploy
+
+Same flow as the asphalt site: push to GitHub, connect Render, `npm install`, start command `node server/server.js` (or root `server.js` per your Render config).
+
+## Rebrand scripts
+
+- `scripts/rebrand-to-fence.py` — initial copy/asset swap
+- `scripts/fix-fence-rebrand.py` — cleanup after global replace

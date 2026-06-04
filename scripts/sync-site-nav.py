@@ -8,8 +8,8 @@ PUBLIC = Path(__file__).resolve().parents[1] / "public"
 SKIP = {"index.html", "a1_hero_preview.html"}
 
 HEADER = """<header class="site-header">
-  <a href="index.html" class="nav-brand" aria-label="A1 Professional Asphalt home">
-    <img src="A1__asphalt_logo.jpeg" alt="A1 Professional Asphalt &amp; Sealing LLC" />
+  <a href="index.html" class="nav-brand" aria-label="A1 Professional Fence home">
+    <img src="A1_fence_logo.svg" alt="A1 Professional Fence LLC" />
   </a>
 
   <button class="hamburger" onclick="toggleMenu(event)" aria-label="Open menu">
@@ -21,13 +21,12 @@ HEADER = """<header class="site-header">
       <a href="index.html#services">Services</a>
       <ul class="drop">
         <li><a href="ai-estimator.html">AI Estimator</a></li>
-        <li><a href="sealcoating.html">Sealcoating</a></li>
-        <li><a href="crack-filling.html">Crack Filling</a></li>
-        <li><a href="parking-lot-striping.html">Parking Lot Striping</a></li>
-        <li><a href="asphalt-patching.html">Asphalt Patching</a></li>
-        <li><a href="concrete-work.html">Concrete Work</a></li>
-        <li><a href="bollard-installation.html">Bollard Installation</a></li>
-        <li><a href="ada-compliance.html">ADA Compliance</a></li>
+        <li><a href="sealcoating.html">Wood Fencing</a></li>
+        <li><a href="crack-filling.html">Vinyl Fencing</a></li>
+        <li><a href="parking-lot-striping.html">Picket Fencing</a></li>
+        <li><a href="asphalt-patching.html">Wrought Iron</a></li>
+        <li><a href="concrete-work.html">Commercial Fencing</a></li>
+        <li><a href="bollard-installation.html">Chain Link</a></li>
       </ul>
     </div>
     <a href="our-work.html">Our Work</a>
@@ -43,10 +42,12 @@ HEADER = """<header class="site-header">
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html#services">Services</a>
-  <a href="sealcoating.html">Sealcoating</a>
-  <a href="crack-filling.html">Crack Filling</a>
-  <a href="parking-lot-striping.html">Parking Lot Striping</a>
-  <a href="asphalt-patching.html">Asphalt Patching</a>
+  <a href="sealcoating.html">Wood Fencing</a>
+  <a href="crack-filling.html">Vinyl Fencing</a>
+  <a href="parking-lot-striping.html">Picket Fencing</a>
+  <a href="asphalt-patching.html">Wrought Iron</a>
+  <a href="concrete-work.html">Commercial Fencing</a>
+  <a href="bollard-installation.html">Chain Link</a>
   <a href="our-work.html">Our Work</a>
   <a href="about.html">About</a>
   <a href="https://a1-asphalt-voxtalk-3.onrender.com/" target="_blank">Artificial Intelligence Team Member</a>
