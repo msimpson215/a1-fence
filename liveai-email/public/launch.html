@@ -38,22 +38,19 @@
       color: #5f6368;
       margin: 0 0 20px;
     }
-    .orb-btn {
-      width: 140px;
-      height: 140px;
+    .orb-wrap {
       margin: 0 auto 16px;
-      border: none;
-      border-radius: 50%;
-      background: #FED100;
-      box-shadow: 0 0 50px rgba(254, 209, 0, 0.7);
       cursor: pointer;
-      animation: pulse 1.4s infinite alternate ease-in-out;
+      line-height: 0;
     }
-    .orb-btn:active { transform: scale(0.97); }
-    @keyframes pulse {
-      from { box-shadow: 0 0 40px rgba(254, 209, 0, 0.55); }
-      to   { box-shadow: 0 0 75px rgba(254, 209, 0, 1); }
+    .orb-wrap img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      display: block;
+      box-shadow: 0 0 50px rgba(254, 209, 0, 0.7);
     }
+    .orb-wrap:active img { transform: scale(0.97); }
     .cta {
       display: inline-block;
       padding: 12px 20px;
@@ -80,7 +77,9 @@
   <div class="card">
     <h1>Open the conversation window</h1>
     <p>Your Gmail stays open in the other tab. A <strong>small window</strong> will open for the AI — not a full new page.</p>
-    <button class="orb-btn" id="orb" type="button" aria-label="Open conversation window"></button>
+    <div class="orb-wrap" id="orb" role="button" tabindex="0" aria-label="Open conversation window">
+      <img src="/email/orb-pulse.gif" width="160" height="160" alt="Axon AI orb" />
+    </div>
     <button class="cta" id="openBtn" type="button">Open small window</button>
     <p class="gmail-hint">If nothing happens, allow popups for this site, then tap again.<br />Switch back to Gmail anytime.</p>
   </div>
