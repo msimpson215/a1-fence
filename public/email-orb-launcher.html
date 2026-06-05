@@ -1,12 +1,191 @@
 <!DOCTYPE html>
-<html>
-<head><title>Launch A1 AI</title></head>
-<body style="margin:0;padding:40px;background:#000;text-align:center;font-family:Arial,sans-serif;">
-<h2 style="color:#F5C518;margin-bottom:20px;">Email Link Generator</h2>
-<p style="color:#fff;margin-bottom:30px;">Copy this link and paste it as a hyperlink on an image in your Gmail email:</p>
-<code style="background:#222;color:#F5C518;padding:16px 24px;border-radius:8px;font-size:1.1rem;display:block;max-width:600px;margin:0 auto 30px;word-break:break-all;">javascript:void(window.open('https://a1-test-fyjq.onrender.com/ai-talk-popup.html','A1AI','width=380,height=520,left=200,top=100,toolbar=no,menubar=no,location=no,status=no'))</code>
-<p style="color:#aaa;font-size:0.85rem;">OR use this as a regular link (opens popup over Gmail):</p>
-<a href="#" onclick="window.open('https://a1-test-fyjq.onrender.com/ai-talk-popup.html','A1AI','width=380,height=520,left=200,top=100,toolbar=no,menubar=no,location=no,status=no');return false;" style="display:inline-block;margin-top:20px;padding:18px 40px;background:#F5C518;color:#000;font-weight:900;font-size:1rem;text-transform:uppercase;letter-spacing:0.1em;border-radius:8px;text-decoration:none;cursor:pointer;">TEST IT — Click to see the popup</a>
-<p style="color:#666;margin-top:40px;font-size:0.8rem;">The popup opens a small window with no toolbar — just the orb floating over whatever's behind it (Gmail, etc.)</p>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Axon Email Orb — Link Generator</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;900&display=swap" rel="stylesheet"/>
+<style>
+:root{--yellow:#F5C518;--bg:#0a0a0a;--panel:#141414;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:#fff;font-family:'Barlow',Arial,sans-serif;line-height:1.6;padding:32px 20px 64px;}
+.wrap{max-width:880px;margin:0 auto;}
+h1{font-size:1.75rem;margin-bottom:8px;}
+h1 span{color:var(--yellow);}
+.lead{color:#aaa;margin-bottom:28px;font-size:0.95rem;}
+.metaphor{background:var(--panel);border-left:4px solid var(--yellow);padding:16px 20px;margin-bottom:32px;font-size:0.9rem;color:#ddd;}
+.metaphor strong{color:var(--yellow);}
+label{display:block;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--yellow);font-weight:800;margin-bottom:6px;}
+.field{margin-bottom:18px;}
+input,textarea{width:100%;padding:12px 14px;background:#1a1a1a;border:1px solid #333;border-radius:6px;color:#fff;font-family:inherit;font-size:0.95rem;}
+textarea{min-height:72px;resize:vertical;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:640px){.grid{grid-template-columns:1fr;}}
+.block{background:var(--panel);border:1px solid #2a2a2a;border-radius:10px;padding:20px;margin-bottom:24px;}
+.block h2{font-size:1rem;color:var(--yellow);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.08em;}
+.code{background:#080808;border:1px solid #333;border-radius:8px;padding:14px;font-size:0.78rem;color:#f5e6a8;word-break:break-all;margin:10px 0 14px;line-height:1.5;}
+.note{font-size:0.8rem;color:#888;margin-top:8px;}
+.note.warn{color:#e8b84a;}
+.btn{display:inline-block;padding:14px 28px;background:var(--yellow);color:#000;font-weight:900;text-transform:uppercase;letter-spacing:0.08em;border:none;border-radius:8px;cursor:pointer;font-size:0.85rem;margin-right:10px;margin-top:8px;}
+.btn.secondary{background:transparent;border:2px solid var(--yellow);color:var(--yellow);}
+.steps{counter-reset:step;list-style:none;}
+.steps li{counter-increment:step;padding-left:36px;position:relative;margin-bottom:14px;font-size:0.9rem;color:#ccc;}
+.steps li::before{content:counter(step);position:absolute;left:0;width:24px;height:24px;background:var(--yellow);color:#000;font-weight:900;font-size:0.75rem;border-radius:50%;display:flex;align-items:center;justify-content:center;top:2px;}
+.preview{text-align:center;padding:24px;background:#111;border-radius:8px;margin-top:16px;}
+.preview img{width:160px;height:160px;border-radius:50%;border:3px solid var(--yellow);object-fit:cover;cursor:pointer;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Axon <span>Email Orb</span></h1>
+  <p class="lead">Your email can have a conversation with you — without touching Gmail. The orb in the email is the <em>table</em>; the popup is the <em>plate</em> floating on top.</p>
+
+  <div class="metaphor">
+    <strong>Gmail = the table.</strong> You can only put images and links in the email.<br/>
+    <strong>Axon = the plate.</strong> A small chromeless window opens on top of Gmail with a transparent edge so the orb looks like it belongs in the message. The AI runs on our servers (ChatGPT-powered), never inside Google.
+  </div>
+
+  <div class="block">
+    <h2>Business settings</h2>
+    <div class="grid">
+      <div class="field">
+        <label for="biz">Business name</label>
+        <input id="biz" type="text" value="A1 Professional Fence"/>
+      </div>
+      <div class="field">
+        <label for="tagline">Tagline (under greeting)</label>
+        <input id="tagline" type="text" value="Professional fencing — St. Louis &amp; nationwide"/>
+      </div>
+    </div>
+    <div class="field">
+      <label for="origin">Your site URL (Render deploy)</label>
+      <input id="origin" type="url" placeholder="https://your-app.onrender.com"/>
+      <p class="note">Leave blank to use this page’s host. Paste your live URL so email links work after deploy.</p>
+    </div>
+    <div class="field">
+      <label for="orbImg">Orb image URL for email (hosted on your site)</label>
+      <input id="orbImg" type="text" value="A1_fence_logo.jpg"/>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Best illusion — JavaScript hyperlink on the image</h2>
+    <p class="note">Paste this as the <strong>link URL</strong> when you attach a hyperlink to the orb image in Gmail. Gmail stays open; a small window opens centered on the reader’s screen.</p>
+    <div class="code" id="jsLink"></div>
+    <button type="button" class="btn" data-copy="jsLink">Copy JavaScript link</button>
+    <button type="button" class="btn secondary" id="testJs">Test popup</button>
+    <p class="note warn">Some clients strip <code>javascript:</code> links. If that happens, use the HTTPS option below and accept a new tab (weaker illusion) or ask recipients to open in Gmail web.</p>
+  </div>
+
+  <div class="block">
+    <h2>Fallback — HTTPS link (works everywhere)</h2>
+    <p class="note">Use this URL on the orb image or on a text button like “Talk with our AI.” Opens the same orb UI; may open a tab instead of floating over Gmail.</p>
+    <div class="code" id="httpsLink"></div>
+    <button type="button" class="btn" data-copy="httpsLink">Copy HTTPS link</button>
+    <button type="button" class="btn secondary" id="testHttps">Open link</button>
+  </div>
+
+  <div class="block">
+    <h2>Email body HTML (copy into Gmail)</h2>
+    <ol class="steps">
+      <li>In Gmail, compose your message and insert your orb image (centered).</li>
+      <li>Select the image → <strong>Link</strong> → paste the JavaScript or HTTPS URL above.</li>
+      <li>Send. When they click, the plate (Axon popup) appears over the table (Gmail).</li>
+    </ol>
+    <div class="code" id="emailHtml"></div>
+    <button type="button" class="btn" data-copy="emailHtml">Copy email HTML</button>
+    <div class="preview">
+      <p class="note" style="margin-bottom:12px;">Preview — click orb to test</p>
+      <a id="previewLink" href="#"><img id="previewImg" src="A1_fence_logo.jpg" alt="Talk with our AI team member"/></a>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>What the recipient sees</h2>
+    <ol class="steps">
+      <li>Orb in the middle of the email with your branding.</li>
+      <li>Click → small window: “Hello, I’m an AI team member with [your business].”</li>
+      <li><strong>Press to talk</strong> → voice/chat (VoxTalk / Axon). <strong>✕</strong> closes the window; Gmail is untouched underneath.</li>
+    </ol>
+  </div>
+</div>
+<script src="assets/axon-email-orb.js"></script>
+<script>
+(function () {
+  var biz = document.getElementById('biz');
+  var tagline = document.getElementById('tagline');
+  var origin = document.getElementById('origin');
+  var orbImg = document.getElementById('orbImg');
+
+  function baseOrigin() {
+    var v = (origin.value || '').trim().replace(/\/$/, '');
+    return v || window.location.origin;
+  }
+
+  function params() {
+    return {
+      biz: biz.value.trim() || 'A1 Professional Fence',
+      tagline: tagline.value.trim() || 'Professional fencing',
+      logo: orbImg.value.trim() || 'A1_fence_logo.jpg'
+    };
+  }
+
+  function orbImageUrl() {
+    var src = orbImg.value.trim() || 'A1_fence_logo.jpg';
+    if (/^https?:\/\//i.test(src)) return src;
+    return baseOrigin() + '/' + src.replace(/^\//, '');
+  }
+
+  function update() {
+    var o = baseOrigin();
+    var p = params();
+    var js = AxonEmailOrb.javascriptHyperlink(p, o);
+    var https = AxonEmailOrb.httpsHyperlink(p, o);
+    document.getElementById('jsLink').textContent = js;
+    document.getElementById('httpsLink').textContent = https;
+    document.getElementById('emailHtml').textContent =
+      '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;margin:0 auto;font-family:Arial,sans-serif;">\n' +
+      '  <tr><td align="center" style="padding:24px 16px;">\n' +
+      '    <p style="margin:0 0 16px;color:#333;font-size:15px;line-height:1.5;">Talk with our AI team member — click the orb below.</p>\n' +
+      '    <a href="' + https + '" style="text-decoration:none;">\n' +
+      '      <img src="' + orbImageUrl() + '" width="180" height="180" alt="Talk with our AI" style="display:block;border-radius:50%;border:3px solid #F5C518;margin:0 auto;"/>\n' +
+      '    </a>\n' +
+      '    <p style="margin:16px 0 0;font-size:12px;color:#888;">Powered by Axon AI</p>\n' +
+      '  </td></tr>\n</table>';
+    document.getElementById('previewLink').href = https;
+    document.getElementById('previewImg').src = orbImg.value.trim() || 'A1_fence_logo.jpg';
+  }
+
+  ['biz', 'tagline', 'origin', 'orbImg'].forEach(function (id) {
+    document.getElementById(id).addEventListener('input', update);
+  });
+
+  document.getElementById('testJs').addEventListener('click', function () {
+    AxonEmailOrb.openEmailOrb(params(), baseOrigin());
+  });
+  document.getElementById('testHttps').addEventListener('click', function () {
+    window.open(AxonEmailOrb.httpsHyperlink(params(), baseOrigin()), '_blank');
+  });
+  document.getElementById('previewLink').addEventListener('click', function (e) {
+    e.preventDefault();
+    AxonEmailOrb.openEmailOrb(params(), baseOrigin());
+  });
+
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    var defaultLabel = btn.textContent;
+    btn.addEventListener('click', function () {
+      var id = btn.getAttribute('data-copy');
+      var text = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(text).then(function () {
+        btn.textContent = 'Copied!';
+        setTimeout(function () { btn.textContent = defaultLabel; }, 2000);
+      });
+    });
+  });
+
+  if (!origin.value) origin.value = window.location.origin;
+  update();
+})();
+</script>
 </body>
 </html>
