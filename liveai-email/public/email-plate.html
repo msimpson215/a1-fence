@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Axon AI</title>
   <style>
-    :root { --yellow: #FED100; }
+    :root { --yellow: #FED100; --yellow-deep: #D9AF00; }
 
     html, body {
       margin: 0;
@@ -13,90 +13,136 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background: transparent;
       font-family: Arial, Helvetica, sans-serif;
       user-select: none;
     }
 
-    /* Full-page mode (direct visit, not popup) */
-    body.full-page {
-      background: radial-gradient(circle, #252525 0%, #000 100%);
+    /* Popup over Gmail: light shade edge-to-edge, Gmail still visible */
+    body.plate-mode {
+      background: transparent;
     }
 
-    #stage {
-      width: 100%;
-      height: 100%;
+    body.plate-mode #shade {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.28);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      background: transparent;
+      gap: 10px;
+    }
+
+    /* Direct visit (not popup): darker page */
+    body.full-page {
+      background: radial-gradient(circle, #2a2a2a 0%, #000 100%);
+    }
+
+    body.full-page #shade {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
     }
 
     .close-plate {
       position: fixed;
-      top: 4px;
-      right: 4px;
-      z-index: 10;
-      width: 22px;
-      height: 22px;
+      top: 10px;
+      right: 12px;
+      z-index: 20;
+      width: 28px;
+      height: 28px;
       border: none;
       border-radius: 50%;
-      background: rgba(0,0,0,0.35);
+      background: rgba(255,255,255,0.15);
       color: #fff;
-      font-size: 0.72rem;
+      font-size: 0.85rem;
       font-weight: 900;
       cursor: pointer;
       line-height: 1;
-      opacity: 0.85;
     }
 
-    .close-plate:hover { background: rgba(0,0,0,0.55); }
-
+    /* Solid orb — logo sits inside */
     #orb-container {
-      width: 168px;
-      height: 168px;
-      cursor: pointer;
-      line-height: 0;
-      flex-shrink: 0;
-    }
-
-    #orb-container img {
-      width: 168px;
-      height: 168px;
+      position: relative;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
-      display: block;
-      box-shadow: 0 0 40px rgba(254, 209, 0, 0.75);
+      cursor: pointer;
+      flex-shrink: 0;
+      background: radial-gradient(circle at 35% 30%, #FFF2A6 0%, var(--yellow) 45%, var(--yellow-deep) 100%);
+      box-shadow:
+        0 0 50px rgba(254, 209, 0, 0.85),
+        0 0 100px rgba(254, 209, 0, 0.45);
+      animation: orbPulse 1.4s ease-in-out infinite alternate;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid rgba(255, 255, 255, 0.35);
     }
 
-    body.active #orb-container img {
-      box-shadow: 0 0 70px rgba(254, 209, 0, 1);
+    @keyframes orbPulse {
+      from {
+        transform: scale(1);
+        box-shadow: 0 0 45px rgba(254, 209, 0, 0.75), 0 0 90px rgba(254, 209, 0, 0.35);
+      }
+      to {
+        transform: scale(1.04);
+        box-shadow: 0 0 70px rgba(254, 209, 0, 1), 0 0 130px rgba(254, 209, 0, 0.55);
+      }
     }
 
-    .caption {
-      max-width: 190px;
-      text-align: center;
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #fff;
-      text-shadow: 0 1px 6px rgba(0,0,0,0.95), 0 0 12px rgba(0,0,0,0.8);
-      line-height: 1.35;
+    body.active #orb-container {
+      animation: orbPulseActive 0.9s ease-in-out infinite alternate;
+      border-color: #fff;
+    }
+
+    @keyframes orbPulseActive {
+      from { transform: scale(1.02); }
+      to   { transform: scale(1.07); }
+    }
+
+    #orb-container .logo {
+      width: 68%;
+      height: 68%;
+      object-fit: contain;
+      pointer-events: none;
+      border-radius: 4px;
+    }
+
+    #orb-container .logo-fallback {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #1a1a1a;
+      letter-spacing: -0.02em;
       pointer-events: none;
     }
 
-    .caption.hide { visibility: hidden; height: 0; margin: 0; overflow: hidden; }
+    .caption {
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.9);
+      max-width: 220px;
+      line-height: 1.4;
+      pointer-events: none;
+    }
 
-    body.starting #orb-container { opacity: 0.9; pointer-events: none; }
+    body.starting #orb-container { pointer-events: none; opacity: 0.92; }
   </style>
 </head>
 <body>
   <button type="button" class="close-plate" id="closeBtn" title="Close" aria-label="Close">✕</button>
-  <div id="stage">
+  <div id="shade">
     <div id="orb-container" role="button" tabindex="0" aria-label="Talk with Axon AI">
-      <img src="/email/orb-pulse.gif" width="168" height="168" alt="" />
+      <img class="logo" id="logoImg" src="" alt="" hidden />
+      <span class="logo-fallback" id="logoFallback">A1</span>
     </div>
     <p class="caption" id="caption">Tap orb to talk</p>
   </div>
@@ -110,34 +156,51 @@
     const isEmailContext = urlParams.get('src') === 'email'
     const isPopup = urlParams.get('popup') === '1' || window.name === 'axon_plate'
     const sessionUrl = isEmailContext ? '/session?src=email' : '/session'
+    const biz = urlParams.get('biz') || 'A1 Professional Asphalt & Sealing'
+    const logoUrl = urlParams.get('logo') || '/email/a1-logo.jpg'
 
     const captionEl = document.getElementById('caption')
     const orbContainer = document.getElementById('orb-container')
+    const logoImg = document.getElementById('logoImg')
+    const logoFallback = document.getElementById('logoFallback')
 
-    if (!isPopup) {
+    if (isPopup) {
+      document.body.classList.add('plate-mode')
+    } else {
       document.body.classList.add('full-page')
-      captionEl.textContent = isEmailContext
-        ? 'Hello — AI team member with A1 Asphalt. Tap orb to talk.'
-        : 'Tap orb to talk with our AI team member'
+      captionEl.textContent = 'Hello — AI team member with ' + biz + '. Tap orb to talk.'
     }
 
+    logoImg.src = logoUrl
+    logoImg.onload = function () {
+      logoImg.hidden = false
+      logoFallback.hidden = true
+    }
+    logoImg.onerror = function () {
+      logoImg.hidden = true
+      logoFallback.hidden = false
+      logoFallback.textContent = (biz.match(/\bA1\b/i) ? 'A1' : biz.charAt(0).toUpperCase())
+    }
+    if (logoUrl) logoImg.src = logoUrl
+
     function setIdle() {
-      document.body.className = isPopup ? '' : 'full-page'
-      captionEl.classList.remove('hide')
-      captionEl.textContent = isPopup ? 'Tap orb to talk' : captionEl.textContent
+      document.body.classList.remove('active', 'starting')
+      if (!isPopup) document.body.classList.add('full-page')
+      if (isPopup) document.body.classList.add('plate-mode')
+      captionEl.textContent = isPopup ? 'Tap orb to talk' : ('Hello — AI team member with ' + biz + '. Tap orb to talk.')
       starting = false
     }
 
     function setStarting() {
-      document.body.className = 'starting' + (isPopup ? '' : ' full-page')
-      captionEl.classList.remove('hide')
-      captionEl.textContent = 'Connecting…'
+      document.body.classList.add('starting')
+      document.body.classList.remove('active')
+      captionEl.textContent = 'Connecting… allow microphone'
     }
 
     function setActive() {
-      document.body.className = 'active' + (isPopup ? '' : ' full-page')
-      captionEl.classList.remove('hide')
-      captionEl.textContent = 'Listening — tap to stop'
+      document.body.classList.add('active')
+      document.body.classList.remove('starting')
+      captionEl.textContent = 'Listening — tap orb to stop'
     }
 
     async function hardStop() {
@@ -157,7 +220,16 @@
       try { window.close() } catch (e) {}
     })
 
-    orbContainer.addEventListener('click', toggleAssistant)
+    document.getElementById('shade').addEventListener('click', async (e) => {
+      if (e.target.id !== 'shade') return
+      await hardStop()
+      try { window.close() } catch (e) {}
+    })
+
+    orbContainer.addEventListener('click', (e) => {
+      e.stopPropagation()
+      toggleAssistant()
+    })
     orbContainer.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault()
@@ -216,9 +288,9 @@
           try { localStream.getTracks().forEach(t => t.stop()) } catch (e) {}
           localStream = null
         }
-        document.body.className = isPopup ? '' : 'full-page'
-        captionEl.textContent = 'Tap orb to retry'
+        captionEl.textContent = 'Tap orb to try again'
         starting = false
+        document.body.classList.remove('active', 'starting')
       }
     }
 
