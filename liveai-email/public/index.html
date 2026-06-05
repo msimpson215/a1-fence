@@ -8,96 +8,75 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       min-height: 100vh;
-      background: radial-gradient(circle at 50% 20%, #2a2a2a 0%, #000 70%);
-      color: #fff;
-      font-family: Arial, Helvetica, sans-serif;
+      background: #f6f8fc;
+      color: #202124;
+      font-family: Arial, sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 24px;
     }
-    .wrap { max-width: 520px; text-align: center; }
-    .kicker {
-      color: #FED100;
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
+    .card {
+      max-width: 420px;
+      background: #fff;
+      border: 1px solid #dadce0;
+      border-radius: 12px;
+      padding: 32px 28px;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
     }
-    h1 {
-      font-size: 1.65rem;
-      line-height: 1.35;
-      margin-bottom: 10px;
-    }
-    .sub {
-      color: #bbb;
-      font-size: 0.95rem;
-      line-height: 1.55;
-      margin-bottom: 28px;
-    }
-    .orb-link {
+    h1 { font-size: 1.15rem; margin-bottom: 8px; }
+    p { font-size: 14px; color: #5f6368; line-height: 1.55; margin-bottom: 20px; }
+    .orb-btn {
       display: inline-block;
-      margin-bottom: 28px;
+      cursor: pointer;
+      margin-bottom: 16px;
       line-height: 0;
-      text-decoration: none;
     }
-    .orb-link img {
-      width: 180px;
-      height: 180px;
+    .orb-btn img {
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
-      box-shadow: 0 0 60px rgba(254, 209, 0, 0.55);
-    }
-    .actions {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      align-items: center;
+      box-shadow: 0 0 40px rgba(254, 209, 0, 0.6);
     }
     .btn {
-      display: inline-block;
-      min-width: 280px;
-      padding: 14px 22px;
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 8px;
       background: #FED100;
       color: #111;
-      font-weight: 800;
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+      font-weight: 700;
+      font-size: 13px;
       text-decoration: none;
       border-radius: 999px;
-    }
-    .btn.secondary {
-      background: transparent;
-      color: #FED100;
-      border: 2px solid #FED100;
-    }
-    .foot {
-      margin-top: 32px;
-      font-size: 0.68rem;
-      color: #666;
-      letter-spacing: 0.1em;
+      border: none;
+      cursor: pointer;
       text-transform: uppercase;
     }
+    .foot { margin-top: 16px; font-size: 11px; color: #80868b; }
   </style>
+  <script src="/assets/axon-email-orb.js"></script>
 </head>
 <body>
-  <div class="wrap">
-    <p class="kicker">Axon AI · A1 Professional Asphalt</p>
-    <h1>Your email can have a conversation with you</h1>
-    <p class="sub">Gmail is the table. This orb is the plate — a small window on top, voice powered by Axon AI. Nothing runs inside Google.</p>
-
-    <a class="orb-link" href="/email-plate.html?src=web" title="Talk with our AI team member">
-      <img src="/email/orb-pulse.gif" width="180" height="180" alt="Pulsating Axon AI orb" />
-    </a>
-
-    <div class="actions">
-      <a class="btn" href="/email-plate.html?src=web">Talk with our AI team member</a>
-      <a class="btn secondary" href="/launch.html?src=email">Test Gmail popup flow</a>
-      <a class="btn secondary" href="/mailer.html">Preview email mailer</a>
-      <a class="btn secondary" href="/email-orb-launcher.html">Copy email links</a>
+  <div class="card">
+    <h1>Live AI Dash Email</h1>
+    <p>Gmail is the table. The orb is a tiny plate on top — you still see your inbox behind it.</p>
+    <div class="orb-btn" id="tryOrb" role="button" tabindex="0">
+      <img src="/email/orb-pulse.gif" width="160" height="160" alt="Axon AI orb" />
     </div>
-
-    <p class="foot">Powered by Axon AI · liveai-email.onrender.com</p>
+    <button class="btn" id="openPlate" type="button">Try the plate (like Gmail)</button>
+    <a class="btn" href="/mailer.html" style="background:#fff;border:2px solid #FED100;color:#111;">Preview email mailer</a>
+    <p class="foot">Powered by Axon AI · A1 Professional Asphalt</p>
   </div>
+  <script>
+    function openPlate() {
+      if (!AxonEmailOrb.openEmailOrb({ src: 'email' })) {
+        alert('Allow popups, then try again.');
+      }
+    }
+    document.getElementById('openPlate').addEventListener('click', openPlate);
+    document.getElementById('tryOrb').addEventListener('click', openPlate);
+  </script>
 </body>
 </html>

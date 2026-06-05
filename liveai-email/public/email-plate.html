@@ -3,193 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Axon AI — A1 Asphalt</title>
+  <title>Axon AI</title>
   <style>
-    :root{
-      --bg1:#252525;
-      --bg2:#000000;
-      --yellow:#FED100;
-      --muted: rgba(254,209,0,0.70);
-      --muted2: rgba(254,209,0,0.45);
-      --stroke: rgba(254,209,0,0.22);
-      --panel: rgba(0,0,0,0.25);
-    }
+    :root { --yellow: #FED100; }
 
     html, body {
       margin: 0;
+      padding: 0;
+      width: 100%;
       height: 100%;
       overflow: hidden;
+      background: transparent;
+      font-family: Arial, Helvetica, sans-serif;
       user-select: none;
-      font-family: "Arial Narrow", Arial, sans-serif;
-      font-weight: 300;
     }
 
-    /* Gmail plate illusion: transparent window over inbox */
-    body.plate-overlay {
-      background: transparent;
-      color: var(--yellow);
+    /* Full-page mode (direct visit, not popup) */
+    body.full-page {
+      background: radial-gradient(circle, #252525 0%, #000 100%);
     }
 
-    body.plate-overlay #overlay {
-      background: transparent;
-    }
-
-    body.plate-overlay #panel {
-      background: rgba(0,0,0,0.72);
-      border-color: rgba(254,209,0,0.35);
-    }
-
-    body:not(.plate-overlay) {
-      background: radial-gradient(circle, var(--bg1) 0%, var(--bg2) 100%);
-      color: var(--yellow);
-    }
-
-    #overlay{
-      position: fixed;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      padding: 22px;
-    }
-
-    #panel{
-      width: min(460px, calc(100vw - 44px));
-      border-radius: 18px;
-      padding: 18px 18px 14px;
-      background: var(--panel);
-      border: 1px solid var(--stroke);
-      backdrop-filter: blur(6px);
-      box-shadow: 0 18px 50px rgba(0,0,0,0.55);
+    #stage {
+      width: 100%;
+      height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      justify-content: center;
+      gap: 8px;
+      background: transparent;
     }
-
-    #headline {
-      font-size: 0.98rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      text-align: center;
-      line-height: 1.2;
-      color: var(--muted);
-      padding: 0 6px;
-      min-height: 2.4em;
-      display: grid;
-      place-items: center;
-    }
-    .hide-soft { visibility: hidden; }
-
-    #orb-container {
-      width: 200px;
-      height: 200px;
-      cursor: pointer;
-      display: grid;
-      place-items: center;
-    }
-
-    .orb-visual {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      border: none;
-      display: block;
-      box-shadow: 0 0 58px rgba(254, 209, 0, 0.78);
-      animation: pulse 1.35s infinite alternate ease-in-out;
-    }
-
-    .orb-fallback {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background-color: var(--yellow);
-      box-shadow: 0 0 58px rgba(254, 209, 0, 0.78);
-      animation: pulse 1.35s infinite alternate ease-in-out;
-    }
-
-    @keyframes pulse {
-      0%   { transform: scale(1); box-shadow: 0 0 58px rgba(254,209,0,0.75); }
-      100% { transform: scale(1.06); box-shadow: 0 0 100px rgba(254,209,0,1); }
-    }
-
-    body.active .orb-visual,
-    body.active .orb-fallback {
-      transform: scale(1.08);
-      box-shadow: 0 0 112px rgba(254, 209, 0, 1);
-    }
-
-    #status-text{
-      font-size: 0.86rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      text-align: center;
-      line-height: 1.2;
-      color: var(--yellow);
-      opacity: 0.90;
-      min-height: 1.2em;
-    }
-
-    #hint{
-      font-size: 0.82rem;
-      color: var(--muted2);
-      text-align: center;
-      line-height: 1.2;
-      min-height: 1.1em;
-      margin-top: -2px;
-    }
-
-    #footer {
-      text-align: center;
-      opacity: 0.60;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      line-height: 1.2;
-      margin-top: 2px;
-    }
-
-    #footer .brand { font-size: 0.82rem; }
-    #footer .phone { font-size: 0.78rem; opacity: 0.9; margin-top: 4px; }
-    #footer .axon { font-size: 0.68rem; margin-top: 6px; opacity: 0.75; }
 
     .close-plate {
       position: fixed;
-      top: 8px;
-      right: 10px;
-      z-index: 30;
-      width: 34px;
-      height: 34px;
+      top: 4px;
+      right: 4px;
+      z-index: 10;
+      width: 22px;
+      height: 22px;
+      border: none;
       border-radius: 50%;
-      border: 2px solid rgba(255,255,255,0.45);
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.35);
       color: #fff;
-      font-size: 1rem;
+      font-size: 0.72rem;
       font-weight: 900;
       cursor: pointer;
+      line-height: 1;
+      opacity: 0.85;
     }
 
-    body.starting #orb-container { pointer-events: none; opacity: 0.95; }
+    .close-plate:hover { background: rgba(0,0,0,0.55); }
+
+    #orb-container {
+      width: 168px;
+      height: 168px;
+      cursor: pointer;
+      line-height: 0;
+      flex-shrink: 0;
+    }
+
+    #orb-container img {
+      width: 168px;
+      height: 168px;
+      border-radius: 50%;
+      display: block;
+      box-shadow: 0 0 40px rgba(254, 209, 0, 0.75);
+    }
+
+    body.active #orb-container img {
+      box-shadow: 0 0 70px rgba(254, 209, 0, 1);
+    }
+
+    .caption {
+      max-width: 190px;
+      text-align: center;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.95), 0 0 12px rgba(0,0,0,0.8);
+      line-height: 1.35;
+      pointer-events: none;
+    }
+
+    .caption.hide { visibility: hidden; height: 0; margin: 0; overflow: hidden; }
+
+    body.starting #orb-container { opacity: 0.9; pointer-events: none; }
   </style>
 </head>
-
-<body class="idle plate-overlay">
+<body>
   <button type="button" class="close-plate" id="closeBtn" title="Close" aria-label="Close">✕</button>
-  <div id="overlay">
-    <div id="panel">
-      <div id="headline">Hello — I&rsquo;m an AI team member with A1 Asphalt &amp; Sealing. Press the orb to talk.</div>
-
-      <div id="orb-container" role="button" tabindex="0" aria-label="Start conversation">
-        <img class="orb-visual" id="orbImg" src="/email/orb-pulse.gif" width="200" height="200" alt="" />
-      </div>
-
-      <div id="status-text"></div>
-      <div id="hint">Tap ✕ or click outside to return to Gmail</div>
-
-      <div id="footer">
-        <div class="brand">A1 Asphalt &amp; Sealing</div>
-        <div class="phone">(618) 929-3301</div>
-        <div class="axon">Powered by Axon AI</div>
-      </div>
+  <div id="stage">
+    <div id="orb-container" role="button" tabindex="0" aria-label="Talk with Axon AI">
+      <img src="/email/orb-pulse.gif" width="168" height="168" alt="" />
     </div>
+    <p class="caption" id="caption">Tap orb to talk</p>
   </div>
 
   <script>
@@ -199,47 +108,40 @@
 
     const urlParams = new URLSearchParams(window.location.search)
     const isEmailContext = urlParams.get('src') === 'email'
-    const isPopup = urlParams.get('popup') === '1' || window.opener || window.name === 'axon_plate'
-    const returnHint = isEmailContext
-      ? 'Tap ✕ or click outside to return to Gmail'
-      : 'Click outside this box to return to the website'
+    const isPopup = urlParams.get('popup') === '1' || window.name === 'axon_plate'
     const sessionUrl = isEmailContext ? '/session?src=email' : '/session'
 
-    const statusEl = document.getElementById('status-text')
-    const headlineEl = document.getElementById('headline')
-    const hintEl = document.getElementById('hint')
+    const captionEl = document.getElementById('caption')
     const orbContainer = document.getElementById('orb-container')
 
-    if (isPopup || isEmailContext) {
-      document.body.classList.add('plate-overlay')
+    if (!isPopup) {
+      document.body.classList.add('full-page')
+      captionEl.textContent = isEmailContext
+        ? 'Hello — AI team member with A1 Asphalt. Tap orb to talk.'
+        : 'Tap orb to talk with our AI team member'
     }
 
-    hintEl.textContent = returnHint
-
-    function setIdle(){
-      document.body.className = 'idle plate-overlay'
-      statusEl.textContent = ''
-      headlineEl.classList.remove('hide-soft')
-      hintEl.textContent = returnHint
+    function setIdle() {
+      document.body.className = isPopup ? '' : 'full-page'
+      captionEl.classList.remove('hide')
+      captionEl.textContent = isPopup ? 'Tap orb to talk' : captionEl.textContent
       starting = false
     }
 
-    function setStarting(){
-      document.body.className = 'starting plate-overlay'
-      statusEl.textContent = 'Connecting…'
-      headlineEl.classList.remove('hide-soft')
-      hintEl.textContent = 'Allow microphone when asked'
+    function setStarting() {
+      document.body.className = 'starting' + (isPopup ? '' : ' full-page')
+      captionEl.classList.remove('hide')
+      captionEl.textContent = 'Connecting…'
     }
 
-    function setActive(){
-      document.body.className = 'active plate-overlay'
-      statusEl.textContent = 'Listening — tap orb to stop'
-      headlineEl.classList.add('hide-soft')
-      hintEl.textContent = 'Tap orb to end conversation'
+    function setActive() {
+      document.body.className = 'active' + (isPopup ? '' : ' full-page')
+      captionEl.classList.remove('hide')
+      captionEl.textContent = 'Listening — tap to stop'
     }
 
-    async function hardStop(){
-      try{
+    async function hardStop() {
+      try {
         if (pc) { try { pc.close() } catch (e) {} pc = null }
         if (localStream) {
           try { localStream.getTracks().forEach(t => t.stop()) } catch (e) {}
@@ -250,16 +152,8 @@
       }
     }
 
-    function closePlate() {
+    document.getElementById('closeBtn').addEventListener('click', () => {
       hardStop()
-      try { window.close() } catch (e) {}
-    }
-
-    document.getElementById('closeBtn').addEventListener('click', closePlate)
-
-    document.getElementById('overlay').addEventListener('click', async (e) => {
-      if (e.target.id !== 'overlay') return
-      await hardStop()
       try { window.close() } catch (e) {}
     })
 
@@ -271,7 +165,7 @@
       }
     })
 
-    async function toggleAssistant(){
+    async function toggleAssistant() {
       if (pc || starting) {
         await hardStop()
         return
@@ -283,19 +177,13 @@
       try {
         const r = await fetch(sessionUrl)
         const data = await r.json()
-        if (!r.ok || data.error) {
-          throw new Error(data.error || 'Could not start session')
-        }
+        if (!r.ok || data.error) throw new Error(data.error || 'Could not start session')
 
         pc = new RTCPeerConnection()
-
         const audio = document.createElement('audio')
         audio.autoplay = true
-
         pc.ontrack = (e) => {
-          if (audio.srcObject !== e.streams[0]) {
-            audio.srcObject = e.streams[0]
-          }
+          if (audio.srcObject !== e.streams[0]) audio.srcObject = e.streams[0]
         }
 
         localStream = await navigator.mediaDevices.getUserMedia({ audio: true })
@@ -317,13 +205,9 @@
           }
         )
 
-        if (!sdpResponse.ok) {
-          throw new Error('Realtime connection failed')
-        }
+        if (!sdpResponse.ok) throw new Error('Realtime connection failed')
 
-        const answer = { type: 'answer', sdp: await sdpResponse.text() }
-        await pc.setRemoteDescription(answer)
-
+        await pc.setRemoteDescription({ type: 'answer', sdp: await sdpResponse.text() })
         setActive()
       } catch (err) {
         console.error(err)
@@ -332,16 +216,10 @@
           try { localStream.getTracks().forEach(t => t.stop()) } catch (e) {}
           localStream = null
         }
-        document.body.className = 'idle plate-overlay'
-        statusEl.textContent = 'Could not start — tap orb to retry'
+        document.body.className = isPopup ? '' : 'full-page'
+        captionEl.textContent = 'Tap orb to retry'
         starting = false
-        headlineEl.classList.remove('hide-soft')
-        hintEl.textContent = returnHint
       }
-    }
-
-    if (urlParams.get('autostart') === '1') {
-      toggleAssistant()
     }
 
     setIdle()
